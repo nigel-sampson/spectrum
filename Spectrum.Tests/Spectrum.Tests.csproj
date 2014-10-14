@@ -52,7 +52,6 @@
   <ItemGroup>
     <Compile Include="ColorTests.HSV.cs" />
     <Compile Include="ColorTests.HSL.cs" />
-    <Compile Include="ColorTests.CYMK.cs" />
     <Compile Include="ColorTests.RGB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
