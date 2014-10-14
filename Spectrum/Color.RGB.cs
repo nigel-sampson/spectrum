@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Spectrum
 {
@@ -82,6 +83,57 @@ namespace Spectrum
                     hashCode = (hashCode * 397) ^ B.GetHashCode();
                     return hashCode;
                 }
+            }
+
+            public double[] ToPercentage()
+            {
+                return new[] { R/255.0d, G/255.0d, B/255.0d };
+            }
+
+            public HSV ToHSV()
+            {
+                var percentage = ToPercentage();
+
+                var min = percentage.Min();
+                var max = percentage.Max();
+
+                var delta = max - min;
+
+                var v = max;
+                double s;
+                double h;
+
+                if (max > 0.0d)
+                {
+                    s = delta / max;
+                }
+                else
+                {
+                    s = 0.0d;
+                }
+
+                if (Math.Abs(percentage[0] - percentage.Max()) < 0.01)
+                {
+                    h = (percentage[1] - percentage[2]) / delta;
+                }
+                else if (Math.Abs(percentage[1] - percentage.Max()) < 0.01)
+                {
+                    h = 2 + (percentage[2] - percentage[1]) / delta;
+                }
+                else
+                {
+                    h = 4 + (percentage[0] - percentage[1]) / delta;
+                }
+
+                h *= 60;
+
+                if (h < 0.0d)
+                    h += 360.0d;
+
+                h = Double.IsNaN(h) ? 0.0d : h;
+                s = Double.IsNaN(s) ? 0.0d : s;
+
+                return new HSV(h, s, v);
             }
         }
     }
