@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectrum", "Spectrum\Spectrum.csproj", "{F7297413-4F1E-448E-B035-2B7F4B30A930}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spectrum.Tests", "Spectrum.Tests\Spectrum.Tests.csproj", "{C2409044-ECBF-4DA4-9430-C6EC2486FF37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7297413-4F1E-448E-B035-2B7F4B30A930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7297413-4F1E-448E-B035-2B7F4B30A930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7297413-4F1E-448E-B035-2B7F4B30A930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7297413-4F1E-448E-B035-2B7F4B30A930}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2409044-ECBF-4DA4-9430-C6EC2486FF37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2409044-ECBF-4DA4-9430-C6EC2486FF37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2409044-ECBF-4DA4-9430-C6EC2486FF37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2409044-ECBF-4DA4-9430-C6EC2486FF37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
