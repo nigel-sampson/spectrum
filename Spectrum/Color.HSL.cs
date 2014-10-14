@@ -54,7 +54,7 @@ namespace Spectrum
 				if (ReferenceEquals(this, other)) 
 					return true;
 
-				return H.Equals(other.H) && S.Equals(other.S) && L.Equals(other.L);
+                return H.IsNearTo(other.H, 1) && S.IsNearTo(other.S) && L.IsNearTo(other.L);
 			}
 
 			public override bool Equals(object obj)

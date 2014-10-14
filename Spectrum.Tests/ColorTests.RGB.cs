@@ -81,7 +81,7 @@ namespace Spectrum.Tests
                 var accent = new Color.RGB(240, 150, 9);
                 var hsv = accent.ToHSV();
 
-                Assert.AreEqual(new Color.HSV(36.623, 0.963, 0.941), hsv);
+                Assert.AreEqual(new Color.HSV(36.6, 0.963, 0.941), hsv);
             }
 
             [TestMethod]
@@ -100,6 +100,33 @@ namespace Spectrum.Tests
                 var hsv = accent.ToHSV();
 
                 Assert.AreEqual(new Color.HSV(0, 0, 1), hsv);
+            }
+
+            [TestMethod]
+            public void ToHSLWithAccentReturnsCorrectValues()
+            {
+                var accent = new Color.RGB(240, 150, 9);
+                var hsl = accent.ToHSL();
+
+                Assert.AreEqual(new Color.HSL(36.6, 0.928, 0.488), hsl);
+            }
+
+            [TestMethod]
+            public void ToHSLWithBlackReturnsCorrectValues()
+            {
+                var accent = new Color.RGB(0, 0, 0);
+                var hsv = accent.ToHSL();
+
+                Assert.AreEqual(new Color.HSL(0, 0, 0), hsv);
+            }
+
+            [TestMethod]
+            public void ToHSLWithWhiteReturnsCorrectValues()
+            {
+                var accent = new Color.RGB(255, 255, 255);
+                var hsv = accent.ToHSL();
+
+                Assert.AreEqual(new Color.HSL(0, 0, 1), hsv);
             }
         }
     }

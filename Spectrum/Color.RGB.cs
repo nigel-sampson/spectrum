@@ -135,6 +135,55 @@ namespace Spectrum
 
                 return new HSV(h, s, v);
             }
+
+            public HSL ToHSL()
+            {
+                var percentage = ToPercentage();
+
+                var min = percentage.Min();
+                var max = percentage.Max();
+
+                var delta = max - min;
+
+                var l = (max + min) / 2.0d;
+                double s;
+                double h;
+
+                if (max > 0.0d)
+                {
+                    if (l < 0.5d)
+                        s = delta / (max + min);
+                    else
+                        s = delta / (2 - max - min);
+                }
+                else
+                {
+                    s = 0;
+                }
+
+                if (Math.Abs(percentage[0] - percentage.Max()) < 0.01)
+                {
+                    h = (percentage[1] - percentage[2]) / delta;
+                }
+                else if (Math.Abs(percentage[1] - percentage.Max()) < 0.01)
+                {
+                    h = 2 + (percentage[2] - percentage[0]) / delta;
+                }
+                else
+                {
+                    h = 4 + (percentage[0] - percentage[1]) / delta;
+                }
+
+                h *= 60;
+
+                if (h < 0.0d)
+                    h += 360.0d;
+
+                h = Double.IsNaN(h) ? 0.0d : h;
+                s = Double.IsNaN(s) ? 0.0d : s;
+
+                return new HSL(h, s, l);
+            }
         }
     }
 }
