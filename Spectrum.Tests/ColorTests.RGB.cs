@@ -137,6 +137,24 @@ namespace Spectrum.Tests
 
                 Assert.AreEqual(new Color.CYMK(0.0, 0.374, 0.962, 0.058), cymk);
             }
+
+            [TestMethod]
+            public void ToCYMKPercentageWithBlackReturnsCorrectPercentages()
+            {
+                var accent = new Color.RGB(0, 0, 0);
+                var cymk = accent.ToCYMK();
+
+                Assert.AreEqual(new Color.CYMK(0.0, 0.0, 0.0, 1.0), cymk);
+            }
+
+            [TestMethod]
+            public void ToCYMKPercentageWithWhiteReturnsCorrectPercentages()
+            {
+                var accent = new Color.RGB(255, 255, 255);
+                var cymk = accent.ToCYMK();
+
+                Assert.AreEqual(new Color.CYMK(0.0, 0.0, 0.0, 0.0), cymk);
+            }
         }
     }
 }
