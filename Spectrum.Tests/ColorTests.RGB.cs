@@ -128,6 +128,15 @@ namespace Spectrum.Tests
 
                 Assert.AreEqual(new Color.HSL(0, 0, 1), hsv);
             }
+
+            [TestMethod]
+            public void ToCYMKPercentageWithAccentReturnsCorrectPercentages()
+            {
+                var accent = new Color.RGB(240, 150, 9);
+                var cymk = accent.ToCYMK();
+
+                Assert.AreEqual(new Color.CYMK(0.0, 0.374, 0.962, 0.058), cymk);
+            }
         }
     }
 }

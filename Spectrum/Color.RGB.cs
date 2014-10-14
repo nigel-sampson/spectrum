@@ -184,6 +184,23 @@ namespace Spectrum
 
                 return new HSL(h, s, l);
             }
+
+            public CYMK ToCYMK()
+            {
+                var percentage = ToPercentage();
+
+                var k = percentage.Min(v => 1.0d - v);
+
+                var c = (1.0d - percentage[0] - k) / (1.0d - k);
+                var y = (1.0d - percentage[1] - k) / (1.0d - k);
+                var m = (1.0d - percentage[2] - k) / (1.0d - k);
+
+                c = Double.IsNaN(c) ? 0.0d : c;
+                y = Double.IsNaN(y) ? 0.0d : y;
+                m = Double.IsNaN(m) ? 0.0d : m;
+
+                return new CYMK(c, y, m, k);
+            }
         }
     }
 }

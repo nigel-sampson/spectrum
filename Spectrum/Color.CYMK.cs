@@ -53,7 +53,7 @@ namespace Spectrum
 
             public bool Equals(CYMK other)
             {
-                return C.Equals(other.C) && Y.Equals(other.Y) && M.Equals(other.M) && K.Equals(other.K);
+                return C.IsNearTo(other.C) && Y.IsNearTo(other.Y) && M.IsNearTo(other.M) && K.IsNearTo(other.K);
             }
 
             public override bool Equals(object obj)
@@ -77,6 +77,11 @@ namespace Spectrum
                     hashCode = (hashCode * 397) ^ k.GetHashCode();
                     return hashCode;
                 }
+            }
+
+            public override string ToString()
+            {
+                return String.Format("{0:P0}, {1:P0}, {2:P0}, {3:P0}", C, Y, M, K);
             }
         }
     }
