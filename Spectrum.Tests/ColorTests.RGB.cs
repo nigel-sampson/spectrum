@@ -70,9 +70,9 @@ namespace Spectrum.Tests
                 var accent = new Color.RGB(240, 150, 9);
                 var percentages = accent.ToPercentage();
 
-                Assert.IsTrue(Math.Abs(0.941 - percentages[0]) < 0.001);
-                Assert.IsTrue(Math.Abs(0.588 - percentages[1]) < 0.001);
-                Assert.IsTrue(Math.Abs(0.035 - percentages[2]) < 0.001);
+                Assert.IsTrue(percentages[0].IsNearTo(0.941));
+                Assert.IsTrue(percentages[1].IsNearTo(0.588));
+                Assert.IsTrue(percentages[2].IsNearTo(0.035));
             }
 
             [TestMethod]
