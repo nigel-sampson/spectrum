@@ -172,6 +172,31 @@ namespace Spectrum
             {
                 return degrees.Select(ShiftHue);
             }
+
+            public HSL GetCompliment()
+            {
+                return ShiftHue(180.0d);
+            }
+
+            public IEnumerable<HSL> GetAnalogous()
+            {
+                return ShiftHue(-30.0d, 30.0d);
+            }
+
+            public IEnumerable<HSL> GetSplitComplimentary()
+            {
+                return ShiftHue(-150.0d, 150.0d);
+            }
+
+            public IEnumerable<HSL> GetTriadicColours()
+            {
+                return ShiftHue(-120.0d, 120.0d);
+            }
+
+            public IEnumerable<HSL> GetTetradicColours()
+            {
+                return ShiftHue(-60, 120, 180);
+            }
         }
     }
 }
