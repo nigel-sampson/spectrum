@@ -8,6 +8,7 @@
 
         <convereters:ComplimentConverter x:Key="Compliment" />
         <convereters:ShiftLightnessConverter x:Key="ShiftLightness" />
+        <convereters:ShiftHueConverter x:Key="ShiftHue" />
 
         <Color x:Key="AccentColor">#FF0088D1</Color>
         <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}"/>
@@ -17,6 +18,9 @@
 
         <SolidColorBrush x:Key="LightenedAccentBrush" 
                          Color="{Binding Source={StaticResource AccentColor}, Converter={StaticResource ShiftLightness}, ConverterParameter=0.3}"/>
+
+        <SolidColorBrush x:Key="SecondaryAccentBrush" 
+                         Color="{Binding Source={StaticResource AccentColor}, Converter={StaticResource ShiftHue}, ConverterParameter=-120}"/>
 
     </Application.Resources>
 

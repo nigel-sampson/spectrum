@@ -11,6 +11,7 @@
         <StackPanel VerticalAlignment="Center">
             <Rectangle Width="100" Height="100" Fill="{StaticResource AccentBrush}" Margin="10" StrokeThickness="1"
                        Stroke="{StaticResource LightenedAccentBrush}"/>
+            <Rectangle Width="100" Height="100" Fill="{StaticResource SecondaryAccentBrush}" Margin="10"/>
             <Rectangle Width="100" Height="100" Fill="{StaticResource ComplimentaryAccentBrush}" Margin="10"/>
         </StackPanel>
         
