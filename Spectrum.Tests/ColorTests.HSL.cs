@@ -79,6 +79,30 @@ namespace Spectrum.Tests
 
                 Assert.AreEqual(new Color.HSV(0, 0, 0), hsv);
             }
+
+            [TestMethod]
+            public void ShiftHueAddsToHue()
+            {
+                var hsl = new Color.HSL(90, 0.5, 0.5);
+
+                Assert.AreEqual(new Color.HSL(120, 0.5, 0.5), hsl.ShiftHue(30));
+            }
+
+            [TestMethod]
+            public void ShiftHueWraps0()
+            {
+                var hsl = new Color.HSL(90, 0.5, 0.5);
+
+                Assert.AreEqual(new Color.HSL(330, 0.5, 0.5), hsl.ShiftHue(-120));
+            }
+
+            [TestMethod]
+            public void ShiftHueWraps360()
+            {
+                var hsl = new Color.HSL(90, 0.5, 0.5);
+
+                Assert.AreEqual(new Color.HSL(0, 0.5, 0.5), hsl.ShiftHue(270));
+            }
         }
     }
 }

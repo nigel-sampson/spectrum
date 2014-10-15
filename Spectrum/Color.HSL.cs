@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Spectrum
 {
@@ -151,6 +153,24 @@ namespace Spectrum
                 var s1 = (2 * (v1 - L)) / v1;
 
                 return new HSV(h1, Double.IsNaN(s1) ? 0.0d : s1, Double.IsNaN(v1) ? 0.0d : v1);
+            }
+
+            public HSL ShiftHue(double degrees)
+            {
+                var hue = h + degrees;
+
+                if (hue >= 360.0d)
+                    hue -= 360.0d;
+
+                if (hue < 0.0d)
+                    hue += 360.0d;
+
+                return new HSL(hue, S, L);
+            }
+
+            public IEnumerable<HSL> ShiftHue(params double[] degrees)
+            {
+                return degrees.Select(ShiftHue);
             }
         }
     }
