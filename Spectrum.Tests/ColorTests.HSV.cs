@@ -52,6 +52,33 @@ namespace Spectrum.Tests
 
                 Assert.AreEqual(new Color.RGB(0, 0, 0), rgb);
             }
+
+            [TestMethod]
+            public void ToHSLWithAccentReturnsCorrectValues()
+            {
+                var accent = new Color.HSV(36.6, 0.963, 0.941);
+                var hsl = accent.ToHSL();
+
+                Assert.AreEqual(new Color.HSL(36.6, 0.928, 0.488), hsl);
+            }
+
+            [TestMethod]
+            public void ToHSLWithWhiteReturnsCorrectValues()
+            {
+                var accent = new Color.HSV(0, 0, 1);
+                var hsl = accent.ToHSL();
+
+                Assert.AreEqual(new Color.HSL(0, 0, 1), hsl);
+            }
+
+            [TestMethod]
+            public void ToHSLWithBlackReturnsCorrectValues()
+            {
+                var accent = new Color.HSV(0, 0, 0);
+                var hsl = accent.ToHSL();
+
+                Assert.AreEqual(new Color.HSL(0, 0, 0), hsl);
+            }
         }
     }
 }

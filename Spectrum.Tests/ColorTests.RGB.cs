@@ -115,18 +115,18 @@ namespace Spectrum.Tests
             public void ToHSLWithBlackReturnsCorrectValues()
             {
                 var accent = new Color.RGB(0, 0, 0);
-                var hsv = accent.ToHSL();
+                var hsl = accent.ToHSL();
 
-                Assert.AreEqual(new Color.HSL(0, 0, 0), hsv);
+                Assert.AreEqual(new Color.HSL(0, 0, 0), hsl);
             }
 
             [TestMethod]
             public void ToHSLWithWhiteReturnsCorrectValues()
             {
                 var accent = new Color.RGB(255, 255, 255);
-                var hsv = accent.ToHSL();
+                var hsl = accent.ToHSL();
 
-                Assert.AreEqual(new Color.HSL(0, 0, 1), hsv);
+                Assert.AreEqual(new Color.HSL(0, 0, 1), hsl);
             }
         }
     }

@@ -144,6 +144,15 @@ namespace Spectrum
                    Convert.ToByte(g * 255.0),
                    Convert.ToByte(b * 255.0));
             }
+
+            public HSL ToHSL()
+            {
+                var h1 = H;
+                var l1 = 0.5d * V * (2.0d - S);
+                var s1 = (V * S) / (1 - Math.Abs(2.0d * l1 - 1));
+
+                return new HSL(h1, Double.IsNaN(s1) ? 0.0d : s1, Double.IsNaN(l1) ? 0.0d : l1);
+            }
         }
     }
 }
