@@ -78,6 +78,72 @@ namespace Spectrum
                     return hashCode;
                 }
             }
+
+            public RGB ToRGB()
+            {
+                if (S.IsNearTo(0.0d))
+                {
+                    return new RGB(
+                        Convert.ToByte(V * 255.0),
+                        Convert.ToByte(V * 255.0),
+                        Convert.ToByte(V * 255.0));
+                }
+
+                var h1 = H / 60.0d;
+
+                if (h1.IsNearTo(6.0d))
+                    h1 = 0.0d;
+
+                var i = (int) h1;
+
+                var v1 = V * (1 - S);
+                var v2 = V * (1 - S * (h1 - i));
+                var v3 = V * (1 - S * (1 - (h1 - i)));
+
+                double r, g, b;
+
+                if (i == 0)
+                {
+                    r = V;
+                    g = v3;
+                    b = v1;
+                }
+                else if (i == 1)
+                {
+                    r = v2;
+                    g = V;
+                    b = v1;
+                }
+                else if (i == 2)
+                {
+                    r = v1;
+                    g = V;
+                    b = v3;
+                }
+                else if (i == 3)
+                {
+                    r = v1;
+                    g = v2;
+                    b = V;
+                }
+                else if (i == 4)
+                {
+                    r = v3;
+                    g = v1;
+                    b = V;
+                }
+                else
+                {
+                    r = V;
+                    g = v1;
+                    b = v2;
+                }
+
+                return new RGB(
+                   Convert.ToByte(r * 255.0),
+                   Convert.ToByte(g * 255.0),
+                   Convert.ToByte(b * 255.0));
+            }
         }
     }
 }
