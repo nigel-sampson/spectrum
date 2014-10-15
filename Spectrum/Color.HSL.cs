@@ -197,6 +197,11 @@ namespace Spectrum
             {
                 return ShiftHue(-60, 120, 180);
             }
+
+            public HSL ShiftLightness(double value)
+            {
+                return new HSL(H, S, Math.Min(Math.Max(0.0d, L + value), 1.0d));
+            }
         }
     }
 }

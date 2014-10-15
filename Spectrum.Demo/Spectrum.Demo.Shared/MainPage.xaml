@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="Spectrum.Demo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Spectrum.Demo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel VerticalAlignment="Center">
+            <Rectangle Width="100" Height="100" Fill="{StaticResource AccentBrush}" Margin="10" StrokeThickness="1"
+                       Stroke="{StaticResource LightenedAccentBrush}"/>
+            <Rectangle Width="100" Height="100" Fill="{StaticResource ComplimentaryAccentBrush}" Margin="10"/>
+        </StackPanel>
+        
+    </Grid>
+</Page>

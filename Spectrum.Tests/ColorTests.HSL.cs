@@ -103,6 +103,30 @@ namespace Spectrum.Tests
 
                 Assert.AreEqual(new Color.HSL(0, 0.5, 0.5), hsl.ShiftHue(270));
             }
+
+            [TestMethod]
+            public void ShiftLightnessAddsToLightness()
+            {
+                var hsl = new Color.HSL(90, 0.5, 0.5);
+
+                Assert.AreEqual(new Color.HSL(90, 0.5, 0.7), hsl.ShiftLightness(0.2));
+            }
+
+            [TestMethod]
+            public void ShiftLightnessCeiling()
+            {
+                var hsl = new Color.HSL(90, 0.5, 0.5);
+
+                Assert.AreEqual(new Color.HSL(90, 0.5, 1.0), hsl.ShiftLightness(0.8));
+            }
+
+            [TestMethod]
+            public void ShiftLightnessFloor()
+            {
+                var hsl = new Color.HSL(90, 0.5, 0.5);
+
+                Assert.AreEqual(new Color.HSL(90, 0.5, 0.0), hsl.ShiftLightness(-0.8));
+            }
         }
     }
 }
