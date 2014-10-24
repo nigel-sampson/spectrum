@@ -53,16 +53,27 @@ and our base accent colour:
 We can create lighter and darker versions of that same colour using
 
 ``` xml
-<SolidColorBrush x:Key="LightenedAccentBrush" Color="{Binding Source={StaticResource AccentColor}, Converter={StaticResource ShiftLightness}, ConverterParameter=0.3}"/>
+<SolidColorBrush x:Key="LightenedAccentBrush" 
+	Color="{Binding 
+		Source={StaticResource AccentColor}, 
+		Converter={StaticResource ShiftLightness}, 
+		ConverterParameter=0.3}"/>
 
-<SolidColorBrush x:Key="DarkenedAccentBrush" Color="{Binding Source={StaticResource AccentColor}, Converter=
-{StaticResource ShiftLightness}, ConverterParameter=-0.3}"/>
+<SolidColorBrush x:Key="DarkenedAccentBrush"
+	Color="{Binding 
+		Source={StaticResource AccentColor}, 
+		Converter={StaticResource ShiftLightness}, 
+		ConverterParameter=-0.3}"/>
 ```
 
 as well as create a minor accent colour
 
 ``` xml
-SolidColorBrush x:Key="SecondaryAccentBrush" Color="{Binding Source={StaticResource AccentColor}, Converter={StaticResource ShiftHue}, ConverterParameter=-120}"/>
+<SolidColorBrush x:Key="SecondaryAccentBrush" 
+	Color="{Binding 
+		Source={StaticResource AccentColor}, 
+		Converter={StaticResource ShiftHue}, 
+		ConverterParameter=-120}"/>
 ```
 
 We can now manage an app's full palatte of colour resources by tweaking a few base colours.
