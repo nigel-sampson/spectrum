@@ -2,13 +2,13 @@
     x:Class="Spectrum.Demo.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:convereters="using:Spectrum.Universal.Converters">
+    xmlns:converters="using:Spectrum.Universal.Converters">
     
     <Application.Resources>
 
-        <convereters:ComplimentConverter x:Key="Compliment" />
-        <convereters:ShiftLightnessConverter x:Key="ShiftLightness" />
-        <convereters:ShiftHueConverter x:Key="ShiftHue" />
+        <converters:ComplimentConverter x:Key="Compliment" />
+        <converters:ShiftLightnessConverter x:Key="ShiftLightness" />
+        <converters:ShiftHueConverter x:Key="ShiftHue" />
 
         <Color x:Key="AccentColor">#FF0088D1</Color>
         <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}"/>

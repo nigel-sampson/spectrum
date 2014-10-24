@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Spectrum</id>
+    <version>0.1.0</version>
+    <authors>Nigel Sampson</authors>
+    <owners>Nigel Sampson</owners>
+    <licenseUrl>https://github.com/nigel-sampson/spectrum/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/nigel-sampson/spectrum</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Utility library for colour spaces.</description>
+    <releaseNotes>Initial prototype.</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>Colour, Spectrum, RGB, HSL, HSV</tags>
+
+  </metadata>
+
+  <files>
+    <file src="..\..\Spectrum\bin\Release\Spectrum.dll" target="lib\portable-net45+sl5+win8+wp8+wpa81\Spectrum.dll" />
+  </files>
+</package>

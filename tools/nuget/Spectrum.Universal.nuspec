@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Spectrum.Universal</id>
+    <version>0.1.0</version>
+    <authors>Nigel Sampson</authors>
+    <owners>Nigel Sampson</owners>
+    <licenseUrl>https://github.com/nigel-sampson/spectrum/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/nigel-sampson/spectrum</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Utility library for colour spaces and xaml converters.</description>
+    <releaseNotes>Initial prototype.</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>Colour, Spectrum, RGB, HSL, HSV, Converters</tags>
+    
+    <dependencies>
+      <dependency id="Spectrum" version="0.1.0" />
+    </dependencies>
+
+  </metadata>
+
+  <files>
+    <file src="..\..\Spectrum.Universal\bin\Release\Spectrum.Universal.dll" target="lib\portable-win8+wpa81\Spectrum.Universal.dll" />
+  </files>
+</package>
