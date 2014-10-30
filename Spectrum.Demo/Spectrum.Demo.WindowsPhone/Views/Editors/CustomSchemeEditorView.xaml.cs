@@ -22,9 +22,9 @@ namespace Spectrum.Demo.Views.Editors
             Loaded += OnLoaded;
         }
 
-        private SchemeEditorViewModelBase ViewModel
+        private CustomSchemeEditorViewModel ViewModel
         {
-            get { return (SchemeEditorViewModelBase) DataContext; }
+            get { return (CustomSchemeEditorViewModel) DataContext; }
         }
 
         private void OnLoaded(object sender, RoutedEventArgs e)

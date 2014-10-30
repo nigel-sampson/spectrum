@@ -14,16 +14,6 @@ namespace Spectrum.Demo.ViewModels.Editors
         public BindableCollection<WinColor> Colors
         {
             get; private set;
-        }
-
-        public void Add(WinColor color)
-        {
-            Colors.Add(color);
-        }
-
-        public void Remove(WinColor color)
-        {
-            Colors.Remove(color);
         } 
     }
 }

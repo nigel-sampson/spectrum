@@ -14,7 +14,7 @@ namespace Spectrum.Demo.ViewModels
                 new SchemeTypeViewModel(SchemeType.Complimentary, null),
                 new SchemeTypeViewModel(SchemeType.Analogous, null),
                 new SchemeTypeViewModel(SchemeType.Triad, null),
-                new SchemeTypeViewModel(SchemeType.Monochromatic, null),
+                new SchemeTypeViewModel(SchemeType.Monochromatic, new MonochromeSchemeEditorViewModel()),
                 new SchemeTypeViewModel(SchemeType.Custom, new CustomSchemeEditorViewModel())
             };
 

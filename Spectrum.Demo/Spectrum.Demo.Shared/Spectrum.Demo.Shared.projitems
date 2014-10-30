@@ -28,6 +28,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\SchemeStorageService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\SchemeType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Editors\CustomSchemeEditorViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Editors\MonochromeSchemeEditorViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Editors\SchemeEditorViewModelBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EditSchemeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SchemeListViewModel.cs" />

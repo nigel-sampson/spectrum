@@ -96,6 +96,9 @@
     <Compile Include="Views\Editors\CustomSchemeEditorView.xaml.cs">
       <DependentUpon>CustomSchemeEditorView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Editors\MonochromeSchemeEditorView.xaml.cs">
+      <DependentUpon>MonochromeSchemeEditorView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EditSchemeView.xaml.cs">
       <DependentUpon>EditSchemeView.xaml</DependentUpon>
     </Compile>
@@ -172,6 +175,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
     <Page Include="Views\Editors\CustomSchemeEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Editors\MonochromeSchemeEditorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
