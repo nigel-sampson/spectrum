@@ -1,0 +1,29 @@
+﻿<UserControl
+    x:Class="Spectrum.Demo.Views.SchemeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:cm="using:Caliburn.Micro"
+    xmlns:controls="using:Spectrum.Demo.Controls"
+    mc:Ignorable="d"
+    d:DesignHeight="200"
+    d:DesignWidth="400" d:DataContext="{d:DesignData SchemeViewModel}">
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Text="{Binding Scheme.Name}" Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,6" />
+        <TextBlock Text="{Binding Scheme.CreatedOn, Converter={StaticResource StringFormat}, ConverterParameter='{}{0:g}'}" Margin="0,0,0,6" Style="{StaticResource BodyTextBlockStyle}" FontSize="12" />
+        <ItemsControl ItemsSource="{Binding Scheme.Colours}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <controls:UniformGrid Columns="{Binding Scheme.Colours.Count}" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Rectangle Height="48" Fill="{Binding Converter={StaticResource ToBrush}, Mode=OneWay}" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </StackPanel>
+</UserControl>

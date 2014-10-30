@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="Spectrum.Demo.Views.EditSchemeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:cm="using:Caliburn.Micro"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Label="save" Icon="Save"/>
+                <AppBarButton Label="share" Icon="Accept"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Border Grid.Row="0">
+            
+        </Border>
+        
+        <Button Grid.Row="1" Margin="24,0">
+            <Button.Content>
+                <TextBlock Text="{Binding SelectedType.Type}"/>
+            </Button.Content>
+            <Button.Flyout>
+                <ListPickerFlyout ItemsSource="{Binding Types}" SelectedItem="{Binding SelectedType, Mode=TwoWay}" DisplayMemberPath="Type"/>
+            </Button.Flyout>
+        </Button>
+        
+        <ContentControl cm:View.Model="{Binding SelectedType.Editor}"  Grid.Row="2" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+        
+    </Grid>
+</Page>

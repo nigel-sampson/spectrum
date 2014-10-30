@@ -1,78 +1,67 @@
 ﻿using System;
+using System.Collections.Generic;
 using Windows.ApplicationModel.Activation;
-using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media.Animation;
-using Windows.UI.Xaml.Navigation;
+using Caliburn.Micro;
+using Spectrum.Demo.Services;
+using Spectrum.Demo.ViewModels;
+using Spectrum.Demo.Views;
 
 namespace Spectrum.Demo
 {
-    public sealed partial class App 
+    public sealed partial class App
     {
-#if WINDOWS_PHONE_APP
-        private TransitionCollection transitions;
-#endif
+        private WinRTContainer container;
 
         public App()
         {
             InitializeComponent();
         }
 
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected override void Configure()
         {
-#if DEBUG
-            if (System.Diagnostics.Debugger.IsAttached)
-            {
-                DebugSettings.EnableFrameRateCounter = true;
-            }
-#endif
+            ConfigureSpecialValues();
 
-            var rootFrame = Window.Current.Content as Frame;
+            container = new WinRTContainer();
 
-            if (rootFrame == null)
-            {
-                rootFrame = new Frame {CacheSize = 1};
+            container.RegisterWinRTServices();
 
-                Window.Current.Content = rootFrame;
-            }
+            container
+                .Singleton<ISchemeStorageService, SchemeStorageService>();
 
-            if (rootFrame.Content == null)
-            {
-#if WINDOWS_PHONE_APP
-                if (rootFrame.ContentTransitions != null)
-                {
-                    transitions = new TransitionCollection();
-
-                    foreach (var c in rootFrame.ContentTransitions)
-                    {
-                        transitions.Add(c);
-                    }
-                }
-
-                rootFrame.ContentTransitions = null;
-                rootFrame.Navigated += RootFrame_FirstNavigated;
-#endif
-
-                if (!rootFrame.Navigate(typeof(MainPage), e.Arguments))
-                {
-                    throw new Exception("Failed to create initial page");
-                }
-            }
-
-            Window.Current.Activate();
+            container
+                .PerRequest<SchemeListViewModel>()
+                .PerRequest<EditSchemeViewModel>();
         }
 
-#if WINDOWS_PHONE_APP
-        private void RootFrame_FirstNavigated(object sender, NavigationEventArgs e)
+        private static void ConfigureSpecialValues()
         {
-            var rootFrame = sender as Frame;
-
-            if (rootFrame == null)
-                return;
-
-            rootFrame.ContentTransitions = transitions ?? new TransitionCollection() { new NavigationThemeTransition() };
-            rootFrame.Navigated -= RootFrame_FirstNavigated;
+            MessageBinder.SpecialValues.Add("$clickeditem", c => ((ItemClickEventArgs)c.EventArgs).ClickedItem);
         }
-#endif
+
+        protected override void PrepareViewFirst(Frame rootFrame)
+        {
+            container.RegisterNavigationService(rootFrame);
+        }
+
+        protected override void OnLaunched(LaunchActivatedEventArgs args)
+        {
+            DisplayRootView<SchemeListView>();
+        }
+
+        protected override void BuildUp(object instance)
+        {
+            container.BuildUp(instance);
+        }
+
+        protected override IEnumerable<object> GetAllInstances(Type service)
+        {
+            return container.GetAllInstances(service);
+        }
+
+        protected override object GetInstance(Type service, string key)
+        {
+            return container.GetInstance(service, key);
+        }
     }
 }

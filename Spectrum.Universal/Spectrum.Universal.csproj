@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Color.RGB.Extensions.cs" />
     <Compile Include="Converters\ComplimentConverter.cs" />
+    <Compile Include="Converters\ForegroundTextConverter.cs" />
     <Compile Include="Converters\ShiftHueConverter.cs" />
     <Compile Include="Converters\ShiftLightnessConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

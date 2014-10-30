@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="Spectrum.Demo.Views.SchemeListView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:cm="using:Caliburn.Micro"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Page.Resources>
+        
+        <Storyboard x:Name="AnimateTitleStoryboard">
+            <ColorAnimation x:Name="AnimateTitleColorAnimation" Storyboard.TargetName="TitlePanelBackground" Storyboard.TargetProperty="Color" Duration="0:0:5" />
+        </Storyboard>
+        
+    </Page.Resources>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="Create" Icon="Add" Label="create"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Border x:Name="TitlePanel" Padding="24,18">
+            <Border.Background>
+                <SolidColorBrush x:Name="TitlePanelBackground" Color="Transparent"/>
+            </Border.Background>
+            <TextBlock Text="Spectrum" Style="{StaticResource HeaderTextBlockStyle}" FontFamily="{StaticResource LobsterRegularFontFamily}" TextLineBounds="TrimToCapHeight"/>
+        </Border>
+        
+        <SemanticZoom Grid.Row="1">
+            <SemanticZoom.ZoomedInView>
+                <ListView x:Name="Schemes" Padding="24" IsItemClickEnabled="True"
+                          cm:Message.Attach="[Event ItemClick] = [Action View($clickedItem)]">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </SemanticZoom.ZoomedInView>
+        </SemanticZoom>
+        
+    </Grid>
+</Page>

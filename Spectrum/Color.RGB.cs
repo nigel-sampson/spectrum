@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 
 namespace Spectrum
@@ -16,6 +17,25 @@ namespace Spectrum
                 this.r = r;
                 this.g = g;
                 this.b = b;
+            }
+
+            public RGB(string hex)
+            {
+                if (hex.StartsWith("#"))
+                    hex = hex.Substring(1);
+
+                if (hex.Length == 6)
+                {
+                    r = Byte.Parse(hex.Substring(0, 2), NumberStyles.HexNumber);
+                    g = Byte.Parse(hex.Substring(2, 2), NumberStyles.HexNumber);
+                    b = Byte.Parse(hex.Substring(4, 2), NumberStyles.HexNumber);
+                }
+                else if (hex.Length == 8)
+                {
+                    r = Byte.Parse(hex.Substring(2, 2), NumberStyles.HexNumber);
+                    g = Byte.Parse(hex.Substring(4, 2), NumberStyles.HexNumber);
+                    b = Byte.Parse(hex.Substring(6, 2), NumberStyles.HexNumber);
+                }
             }
 
             public byte R

@@ -9,6 +9,15 @@ namespace Spectrum.Tests
         public class RGB
         {
             [TestMethod]
+            public void CanConstructWithHexString()
+            {
+                Assert.AreEqual(new Color.RGB(0, 0 , 0), new Color.RGB("#000000"));
+                Assert.AreEqual(new Color.RGB(240, 150, 9), new Color.RGB("#F09609"));
+                Assert.AreEqual(new Color.RGB(255, 255, 255), new Color.RGB("#FFFFFFFF"));
+            }
+
+
+            [TestMethod]
             public void EqualsWithSameColoursReturnsTrue()
             {
                 var c1 = new Color.RGB(240, 150, 9);

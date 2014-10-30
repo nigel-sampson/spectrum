@@ -15,12 +15,30 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\UniformGrid.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ColorHexConveter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\ColorToBrushConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converters\StringFormatConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ComparableExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\EnumerableExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\StoryboardExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ColorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ISchemeStorageService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Scheme.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\SchemeStorageService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\SchemeType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Editors\CustomSchemeEditorViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Editors\SchemeEditorViewModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EditSchemeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SchemeListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SchemeTypeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SchemeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="$(MSBuildThisFileDirectory)MainPage.xaml">
+    <Content Include="$(MSBuildThisFileDirectory)Resources\Fonts\Lobster-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Resources\Styles.Shared.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
