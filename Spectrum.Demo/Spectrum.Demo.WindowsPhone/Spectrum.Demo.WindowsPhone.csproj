@@ -93,14 +93,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\WindowManager.cs" />
+    <Compile Include="Views\Editors\AnalogousSchemeEditorView.xaml.cs">
+      <DependentUpon>AnalogousSchemeEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editors\ColourView.xaml.cs">
+      <DependentUpon>ColourView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editors\ComplimentarySchemeEditorView.xaml.cs">
+      <DependentUpon>ComplimentarySchemeEditorView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Editors\CustomSchemeEditorView.xaml.cs">
       <DependentUpon>CustomSchemeEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editors\DerivedColourView.xaml.cs">
+      <DependentUpon>DerivedColourView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editors\EditColourView.xaml.cs">
+      <DependentUpon>EditColourView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Editors\MonochromeSchemeEditorView.xaml.cs">
       <DependentUpon>MonochromeSchemeEditorView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Editors\TriadSchemeEditorView.xaml.cs">
+      <DependentUpon>TriadSchemeEditorView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EditSchemeView.xaml.cs">
       <DependentUpon>EditSchemeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SaveSchemeView.xaml.cs">
+      <DependentUpon>SaveSchemeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SchemeListView.xaml.cs">
       <DependentUpon>SchemeListView.xaml</DependentUpon>
@@ -174,7 +196,27 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
+    <Page Include="Views\Editors\AnalogousSchemeEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Editors\ColourView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Editors\ComplimentarySchemeEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Editors\CustomSchemeEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Editors\DerivedColourView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Editors\EditColourView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -182,7 +224,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Editors\TriadSchemeEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\EditSchemeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SaveSchemeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

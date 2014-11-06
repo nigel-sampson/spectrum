@@ -202,6 +202,11 @@ namespace Spectrum
             {
                 return new HSL(H, S, Math.Min(Math.Max(0.0d, L + value), 1.0d));
             }
+
+            public HSL ShiftSaturation(double value)
+            {
+                return new HSL(H, Math.Min(Math.Max(0.0d, S + value), 1.0d), L);
+            }
         }
     }
 }

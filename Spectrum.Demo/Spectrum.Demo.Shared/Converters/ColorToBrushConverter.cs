@@ -1,4 +1,5 @@
 ﻿using System;
+using Windows.UI;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media;
 using Spectrum.Universal;
@@ -10,18 +11,19 @@ namespace Spectrum.Demo.Converters
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            var color = (WinColor) value;
+            var color = Colors.Transparent;
 
-            if (color == null)
+            var rgb = value as Color.RGB;
+
+            if (rgb != null)
             {
-                var rgb = value as Color.RGB;
-
-                if (rgb != null)
-                    color = rgb.ToSystemColor(255);
+                color = rgb.ToSystemColor(255);
+            }
+            else if (value is WinColor)
+            {
+                color = (WinColor) value;
             }
 
-            if (color == null)
-                return null;
 
             return new SolidColorBrush(color);
         }

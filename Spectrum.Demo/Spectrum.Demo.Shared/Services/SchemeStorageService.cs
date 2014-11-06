@@ -11,22 +11,32 @@ namespace Spectrum.Demo.Services
 {
     public class SchemeStorageService : ISchemeStorageService
     {
-        private IReadOnlyCollection<Scheme> cachedSchemes;
+        private IList<Scheme> cachedSchemes;
 
         public async Task<IReadOnlyCollection<Scheme>> GetSchemesAsync()
         {
             if (cachedSchemes != null)
-                return cachedSchemes;
+                return new ReadOnlyCollection<Scheme>(cachedSchemes);
 
             var roamingFiles = await ApplicationData.Current.RoamingFolder.GetFilesAsync();
 
-            var schemes = await roamingFiles
+            cachedSchemes = (await roamingFiles
                 .Where(f => f.FileType == ".scheme")
-                .SelectAsync(DeserializeFileAsync);
+                .SelectAsync(DeserializeFileAsync))
+                .ToList();
 
-            cachedSchemes = new ReadOnlyCollection<Scheme>(schemes.ToList());
+            return new ReadOnlyCollection<Scheme>(cachedSchemes);
+        }
 
-            return cachedSchemes;
+        public async Task SaveSchemeAsync(Scheme scheme)
+        {
+            cachedSchemes.Add(scheme);
+
+            var file = await ApplicationData.Current.RoamingFolder.CreateFileAsync(String.Format("{0:N}.scheme", scheme.Id), CreationCollisionOption.ReplaceExisting);
+
+            var json = JsonConvert.SerializeObject(scheme);
+
+            await FileIO.WriteTextAsync(file, json);
         }
 
         private async Task<Scheme> DeserializeFileAsync(StorageFile file)

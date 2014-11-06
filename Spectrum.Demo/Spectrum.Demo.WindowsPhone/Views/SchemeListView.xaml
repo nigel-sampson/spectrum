@@ -8,13 +8,6 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     
-    <Page.Resources>
-        
-        <Storyboard x:Name="AnimateTitleStoryboard">
-            <ColorAnimation x:Name="AnimateTitleColorAnimation" Storyboard.TargetName="TitlePanelBackground" Storyboard.TargetProperty="Color" Duration="0:0:5" />
-        </Storyboard>
-        
-    </Page.Resources>
     <Page.BottomAppBar>
         <CommandBar>
             <AppBarButton x:Name="Create" Icon="Add" Label="create"/>
@@ -27,10 +20,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         
-        <Border x:Name="TitlePanel" Padding="24,18">
-            <Border.Background>
-                <SolidColorBrush x:Name="TitlePanelBackground" Color="Transparent"/>
-            </Border.Background>
+        <Border Padding="24,18">
             <TextBlock Text="Spectrum" Style="{StaticResource HeaderTextBlockStyle}" FontFamily="{StaticResource LobsterRegularFontFamily}" TextLineBounds="TrimToCapHeight"/>
         </Border>
         

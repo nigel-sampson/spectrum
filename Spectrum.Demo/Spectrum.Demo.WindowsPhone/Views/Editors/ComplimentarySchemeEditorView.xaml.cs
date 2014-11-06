@@ -7,9 +7,9 @@ using Spectrum.Demo.ViewModels.Editors;
 
 namespace Spectrum.Demo.Views.Editors
 {
-    public sealed partial class MonochromeSchemeEditorView
+    public sealed partial class ComplimentarySchemeEditorView
     {
-        public MonochromeSchemeEditorView()
+        public ComplimentarySchemeEditorView()
         {
             InitializeComponent();
 
@@ -18,7 +18,7 @@ namespace Spectrum.Demo.Views.Editors
 
         private SingleColorSchemeEditorViewModelBase ViewModel
         {
-            get { return (SingleColorSchemeEditorViewModelBase) DataContext; }
+            get { return (SingleColorSchemeEditorViewModelBase)DataContext; }
         }
 
         private void OnLoaded(object sender, RoutedEventArgs e)

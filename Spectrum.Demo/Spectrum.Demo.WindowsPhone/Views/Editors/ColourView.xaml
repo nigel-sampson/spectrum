@@ -1,0 +1,31 @@
+﻿<UserControl
+    x:Class="Spectrum.Demo.Views.Editors.ColourView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:cm="using:Caliburn.Micro"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Border Background="{Binding Color, Converter={StaticResource ToBrush}, Mode=OneWay}" Padding="24,12,12,12">
+        <Grid>
+            <TextBlock Text="{Binding Description}" Style="{StaticResource BodyTextBlockStyle}" 
+                                           HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False"
+                                           Foreground="{Binding Color, Converter={StaticResource ForegroundText}}"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="View" cm:Message.Attach="View($dataContext)" Style="{StaticResource IconButtonStyle}" PointerMoved="OnHandlePointerMoved"
+                                            Foreground="{Binding Color, Converter={StaticResource ForegroundText}}" Content="&#xE18B;"/>
+
+                <Button x:Name="Edit" cm:Message.Attach="Edit($dataContext)" Style="{StaticResource IconButtonStyle}" PointerMoved="OnHandlePointerMoved"
+                                            Foreground="{Binding Color, Converter={StaticResource ForegroundText}}" Content="&#xE104;"/>
+
+                <Button x:Name="Remove" cm:Message.Attach="Remove($dataContext)" Style="{StaticResource IconButtonStyle}" PointerMoved="OnHandlePointerMoved"
+                                            Foreground="{Binding Color, Converter={StaticResource ForegroundText}}" Content="&#xE10A;"/>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</UserControl>

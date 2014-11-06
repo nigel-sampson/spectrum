@@ -6,5 +6,6 @@ namespace Spectrum.Demo.Services
     public interface ISchemeStorageService
     {
         Task<IReadOnlyCollection<Scheme>> GetSchemesAsync();
+        Task SaveSchemeAsync(Scheme scheme);
     }
 }

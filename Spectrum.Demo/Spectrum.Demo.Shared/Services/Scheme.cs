@@ -22,6 +22,11 @@ namespace Spectrum.Demo.Services
             get; set;
         }
 
+        public SchemeType Type
+        {
+            get; set;
+        }
+
         public DateTimeOffset CreatedOn
         {
             get; set;

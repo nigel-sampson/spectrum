@@ -1,11 +1,10 @@
 ﻿<UserControl
-    x:Class="Spectrum.Demo.Views.Editors.MonochromeSchemeEditorView"
+    x:Class="Spectrum.Demo.Views.Editors.TriadSchemeEditorView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:editors="using:Spectrum.Demo.Views.Editors"
+    xmlns:local="using:Spectrum.Demo.Views.Editors"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:cm="using:Caliburn.Micro"
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="400">
@@ -25,11 +24,11 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <editors:DerivedColourView Grid.Row="0" DataContext="{Binding CurrentColor.Color, Converter={StaticResource ShiftLightness}, ConverterParameter=-0.2}" />
-            <editors:DerivedColourView Grid.Row="1" DataContext="{Binding CurrentColor.Color, Converter={StaticResource ShiftLightness}, ConverterParameter=-0.1}" />
-            <editors:ColourView Grid.Row="2" DataContext="{Binding CurrentColor}" CanRemove="False"/>
-            <editors:DerivedColourView Grid.Row="3" DataContext="{Binding CurrentColor.Color, Converter={StaticResource ShiftLightness}, ConverterParameter=0.1}"/>
-            <editors:DerivedColourView Grid.Row="4" DataContext="{Binding CurrentColor.Color, Converter={StaticResource ShiftLightness}, ConverterParameter=0.2}"/>
+            <local:DerivedColourView Grid.Row="0" DataContext="{Binding CurrentColor.Color, Converter={StaticResource ShiftHue}, ConverterParameter=-120}" />
+            <local:DerivedColourView Grid.Row="1" DataContext="{Binding CurrentColor.Color, Converter={StaticResource ShiftHue}, ConverterParameter=120}" />
+            <local:ColourView Grid.Row="2" DataContext="{Binding CurrentColor}" CanRemove="False"/>
+            <local:DerivedColourView Grid.Row="3" DataContext="{Binding CurrentColor.Color, Converter={StaticResource ShiftLightness}, ConverterParameter=0.05}"/>
+            <local:DerivedColourView Grid.Row="4" DataContext="{Binding CurrentColor.Color, Converter={StaticResource ShiftLightness}, ConverterParameter=0.1}"/>
 
         </Grid>
 

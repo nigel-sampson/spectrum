@@ -7,9 +7,9 @@ using Spectrum.Demo.ViewModels.Editors;
 
 namespace Spectrum.Demo.Views.Editors
 {
-    public sealed partial class MonochromeSchemeEditorView
+    public sealed partial class TriadSchemeEditorView
     {
-        public MonochromeSchemeEditorView()
+        public TriadSchemeEditorView()
         {
             InitializeComponent();
 

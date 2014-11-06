@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Windows.ApplicationModel.Activation;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml.Controls;
 using Caliburn.Micro;
 using Spectrum.Demo.Services;
@@ -20,6 +21,10 @@ namespace Spectrum.Demo
 
         protected override void Configure()
         {
+            var baseGetLog = LogManager.GetLog;
+
+            LogManager.GetLog = t => t == typeof (ViewModelBinder) ? new DebugLog(t) : baseGetLog(t);
+
             ConfigureSpecialValues();
 
             container = new WinRTContainer();
@@ -27,11 +32,18 @@ namespace Spectrum.Demo
             container.RegisterWinRTServices();
 
             container
-                .Singleton<ISchemeStorageService, SchemeStorageService>();
+                .Singleton<ISchemeStorageService, SchemeStorageService>()
+                .Singleton<IWindowManager, WindowManager>();
 
             container
                 .PerRequest<SchemeListViewModel>()
                 .PerRequest<EditSchemeViewModel>();
+
+#if WINDOWS_PHONE_APP
+            var statusBar = StatusBar.GetForCurrentView();
+
+            statusBar.HideAsync();
+#endif
         }
 
         private static void ConfigureSpecialValues()

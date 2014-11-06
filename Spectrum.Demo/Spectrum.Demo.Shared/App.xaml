@@ -18,6 +18,9 @@
             <converters:ColorHexConveter x:Key="ColorHex"/>
             
             <spectrum:ForegroundTextConverter x:Key="ForegroundText" />
+            <spectrum:ShiftLightnessConverter x:Key="ShiftLightness"/>
+            <spectrum:ShiftHueConverter x:Key="ShiftHue"/>
+            <spectrum:ShiftSaturationConverter x:Key="ShiftSaturation"/>
 
         </ResourceDictionary>
     </cm:CaliburnApplication.Resources>

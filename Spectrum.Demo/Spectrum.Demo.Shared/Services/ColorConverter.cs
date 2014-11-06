@@ -31,8 +31,6 @@ namespace Spectrum.Demo.Services
             if (reader.TokenType != JsonToken.StartArray)
                 return colours;
 
-            reader.Read(); // Start Array
-
             reader.Read();
 
             while (reader.TokenType != JsonToken.EndArray)

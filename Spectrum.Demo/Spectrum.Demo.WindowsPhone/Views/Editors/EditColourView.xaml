@@ -1,0 +1,19 @@
+﻿<UserControl
+    x:Class="Spectrum.Demo.Views.Editors.EditColourView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Spectrum.Demo.Views.Editors"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    
+    <StackPanel>
+        <Rectangle Height="48" Margin="0,0,0,24" Fill="{Binding Colour, Converter={StaticResource ToBrush}}"/>
+
+        <Slider x:Name="Hue" Header="Hue" Minimum="0" Maximum="360" StepFrequency="1" Style="{StaticResource DialogSliderStyle}" />
+        <Slider x:Name="Saturation" Header="Saturation" Minimum="0" Maximum="1" StepFrequency="0.01" Style="{StaticResource DialogSliderStyle}"/>
+        <Slider x:Name="Lightness" Header="Lightness" Minimum="0" Maximum="1" StepFrequency="0.01" Style="{StaticResource DialogSliderStyle}"/>
+    </StackPanel>
+</UserControl>

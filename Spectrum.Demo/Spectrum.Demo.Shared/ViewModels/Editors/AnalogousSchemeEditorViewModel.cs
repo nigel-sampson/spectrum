@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using Spectrum.Demo.Services;
 using Spectrum.Universal;
-using WinColor = Windows.UI.Color;
 
 namespace Spectrum.Demo.ViewModels.Editors
 {
-    public class MonochromeSchemeEditorViewModel : SingleColorSchemeEditorViewModelBase
+    public class AnalogousSchemeEditorViewModel : SingleColorSchemeEditorViewModelBase
     {
-        public MonochromeSchemeEditorViewModel(IWindowManager windowManager)
+        public AnalogousSchemeEditorViewModel(IWindowManager windowManager)
             : base(windowManager)
         {
             
@@ -21,11 +21,11 @@ namespace Spectrum.Demo.ViewModels.Editors
 
             return new[]
             {
-                hsl.ShiftLightness(-0.2).ToRGB(),
-                hsl.ShiftLightness(-0.1).ToRGB(),
+                hsl.ShiftHue(-30).ToRGB(),
+                hsl.ShiftHue(15).ToRGB(),
                 rgb,
-                hsl.ShiftLightness(0.1).ToRGB(),
-                hsl.ShiftLightness(0.2).ToRGB(),
+                hsl.ShiftHue(15).ToRGB(),
+                hsl.ShiftHue(30).ToRGB(),
             };
         }
     }

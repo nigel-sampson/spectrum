@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:cm="using:Caliburn.Micro"
+    xmlns:editors="using:Spectrum.Demo.Views.Editors"
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="400">
@@ -21,32 +22,8 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             
-            <ItemsControl x:Name="Colors" Grid.Row="0">
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Border Background="{Binding Converter={StaticResource ToBrush}, Mode=OneWay}" Padding="12">
-                            <Grid>
-                                <TextBlock Text="{Binding Converter={StaticResource ColorHex}}" Style="{StaticResource BodyTextBlockStyle}" 
-                                           HorizontalAlignment="Center" VerticalAlignment="Center"
-                                           Foreground="{Binding Converter={StaticResource ForegroundText}}"/>
-
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                    <Button cm:Message.Attach="Remove($dataContext)" Style="{StaticResource IconButtonStyle}"
-                                            Foreground="{Binding Converter={StaticResource ForegroundText}}" Content="&#xE104;"/>
-                                    
-                                    <Button cm:Message.Attach="Remove($dataContext)" Style="{StaticResource IconButtonStyle}"
-                                            Foreground="{Binding Converter={StaticResource ForegroundText}}" Content="&#xE10A;"/>    
-                                </StackPanel>
-
-                                
-                                
-                            </Grid>
-                        </Border>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-            
-
+            <ItemsControl x:Name="Colors" Grid.Row="0" />
+           
             <Border x:Name="InputPanel" Grid.Row="1" Background="Transparent">
                 <TextBlock x:Name="Description" Style="{StaticResource BodyTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" />
             </Border>

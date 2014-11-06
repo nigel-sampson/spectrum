@@ -11,9 +11,9 @@ namespace Spectrum.Demo.Views.Editors
 {
     public sealed partial class CustomSchemeEditorView
     {
-        private double _currentHue;
-        private double _currentSaturation = 0.5d;
-        private double _currentLuminosity;
+        private double currentHue;
+        private double currentSaturation = 0.5d;
+        private double currentLuminosity;
 
         public CustomSchemeEditorView()
         {
@@ -29,7 +29,15 @@ namespace Spectrum.Demo.Views.Editors
 
         private void OnLoaded(object sender, RoutedEventArgs e)
         {
+            var random = new Random();
+
+            currentHue = random.Next(0, 360);
+            currentLuminosity = random.NextDouble();
+
+            UpdateColor();
+
             Observable.FromEventPattern<PointerRoutedEventArgs>(InputPanel, "PointerMoved")
+                .Where(ev => !ev.EventArgs.Handled)
                 .Select(ev => ev.EventArgs.GetCurrentPoint(InputPanel))
                 .Select(p => new
                 {
@@ -38,8 +46,8 @@ namespace Spectrum.Demo.Views.Editors
                 })
                 .Subscribe(p =>
                 {
-                    _currentHue = p.Width * 360.0d;
-                    _currentLuminosity = p.Height;
+                    currentHue = p.Width * 360.0d;
+                    currentLuminosity = p.Height;
 
                     UpdateColor();
                 });
@@ -48,16 +56,16 @@ namespace Spectrum.Demo.Views.Editors
                 .Select(ev => ev.EventArgs.NewValue)
                 .Subscribe(s =>
                 {
-                    _currentSaturation = s;
+                    currentSaturation = s;
 
                     UpdateColor();
                 });
 
-            Observable.FromEventPattern<TappedRoutedEventArgs>(InputPanel, "Tapped")
+            Observable.FromEventPattern<PointerRoutedEventArgs>(InputPanel, "PointerReleased")
                 .Where(ev => ViewModel.Colors.Count < 6)
                 .Subscribe(ev =>
                 {
-                    var hsl = new Color.HSL(_currentHue, _currentSaturation, _currentLuminosity);
+                    var hsl = new Color.HSL(currentHue, currentSaturation, currentLuminosity);
                     var rgb = hsl.ToRGB();
 
                     ViewModel.Add(rgb.ToSystemColor(255));
@@ -66,7 +74,7 @@ namespace Spectrum.Demo.Views.Editors
 
         private void UpdateColor()
         {
-            var hsl = new Color.HSL(_currentHue, _currentSaturation, _currentLuminosity);
+            var hsl = new Color.HSL(currentHue, currentSaturation, currentLuminosity);
             var rgb = hsl.ToRGB();
 
             InputPanel.Background = new SolidColorBrush(rgb.ToSystemColor(255));

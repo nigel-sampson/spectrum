@@ -50,6 +50,7 @@
     <Compile Include="Converters\ForegroundTextConverter.cs" />
     <Compile Include="Converters\ShiftHueConverter.cs" />
     <Compile Include="Converters\ShiftLightnessConverter.cs" />
+    <Compile Include="Converters\ShiftSaturationConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
