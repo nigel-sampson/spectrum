@@ -35,7 +35,8 @@ namespace Spectrum.Demo
                 .Singleton<ISchemeStorageService, SchemeStorageService>()
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IBitmapService, BitmapService>()
-                .Singleton<ITileService, TileService>();
+                .Singleton<ITileService, TileService>()
+                .Singleton<IAppSettingsService, AppSettingsService>();
 
             container
                 .PerRequest<SchemeListViewModel>()

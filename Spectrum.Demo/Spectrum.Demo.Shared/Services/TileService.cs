@@ -29,10 +29,10 @@ namespace Spectrum.Demo.Services
             wideTile.Square150x150Content = squareTile;
 
             squareTile.Branding = TileBranding.Name;
-            squareTile.Image.Src = "ms-appx:///resources/images/system/square.png";
+            squareTile.Image.Src = "ms-appx:///resources/images/square150.png";
 
             wideTile.Branding = TileBranding.Name;
-            wideTile.Image.Src = "ms-appx:///resources/images/system/wide.png";
+            wideTile.Image.Src = "ms-appx:///resources/images/wide.png";
 
             var notification = wideTile.CreateNotification();
 

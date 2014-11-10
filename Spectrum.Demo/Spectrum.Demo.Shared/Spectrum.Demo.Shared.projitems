@@ -26,11 +26,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\ColorConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IBitmapService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ISchemeStorageService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IAppSettingsService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ITileService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IWindowManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\Scheme.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\SchemeStorageService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\SchemeType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AppSettingsService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\TileService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\TileSize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Editors\AnalogousSchemeEditorViewModel.cs" />
