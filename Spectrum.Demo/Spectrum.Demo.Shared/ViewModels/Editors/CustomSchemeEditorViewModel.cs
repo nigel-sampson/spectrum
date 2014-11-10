@@ -16,6 +16,7 @@ namespace Spectrum.Demo.ViewModels.Editors
 
         {
             Colors = new BindableCollection<ColourViewModel>();
+            Colors.CollectionChanged += (s, e) => NotifyOfPropertyChange(() => CanSave);
         }
 
         public BindableCollection<ColourViewModel> Colors
@@ -41,6 +42,11 @@ namespace Spectrum.Demo.ViewModels.Editors
         public override void SetColors(IEnumerable<Color.RGB> colours)
         {
             Colors.AddRange(colours.Select(c => new ColourViewModel { Color = c.ToSystemColor(255) }));
+        }
+
+        public override bool CanSave
+        {
+            get { return Colors.Any(); }
         }
     }
 }

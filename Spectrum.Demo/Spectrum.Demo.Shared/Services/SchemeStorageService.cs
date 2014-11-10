@@ -117,6 +117,16 @@ namespace Spectrum.Demo.Services
             await tileService.EnqueueSchemeTileAsync(scheme);
         }
 
+        public async Task DeleteSchemeAsync(Scheme scheme)
+        {
+            if (cachedSchemes.Contains(scheme))
+                cachedSchemes.Remove(scheme);
+
+            var file = await ApplicationData.Current.RoamingFolder.CreateFileAsync(String.Format("{0:N}.scheme", scheme.Id), CreationCollisionOption.OpenIfExists);
+
+            await file.DeleteAsync();
+        }
+
         private async Task<Scheme> DeserializeFileAsync(StorageFile file)
         {
             var json = await FileIO.ReadTextAsync(file);

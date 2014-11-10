@@ -39,5 +39,7 @@ namespace Spectrum.Demo.ViewModels.Editors
         }
 
         public abstract void SetColors(IEnumerable<Color.RGB> colours);
+
+        public abstract bool CanSave { get; }
     }
 }

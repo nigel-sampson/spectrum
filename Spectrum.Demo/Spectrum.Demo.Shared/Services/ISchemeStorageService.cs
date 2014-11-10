@@ -7,5 +7,6 @@ namespace Spectrum.Demo.Services
     {
         Task<IReadOnlyCollection<Scheme>> GetSchemesAsync();
         Task SaveSchemeAsync(Scheme scheme);
+        Task DeleteSchemeAsync(Scheme scheme);
     }
 }

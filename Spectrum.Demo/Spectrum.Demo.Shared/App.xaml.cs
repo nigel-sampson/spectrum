@@ -42,6 +42,8 @@ namespace Spectrum.Demo
                 .PerRequest<SchemeListViewModel>()
                 .PerRequest<EditSchemeViewModel>();
 
+            container.RegisterSharingService();
+
 #if WINDOWS_PHONE_APP
             var statusBar = StatusBar.GetForCurrentView();
 

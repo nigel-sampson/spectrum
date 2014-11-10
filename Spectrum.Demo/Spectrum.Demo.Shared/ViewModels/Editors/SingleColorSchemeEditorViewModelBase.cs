@@ -59,5 +59,10 @@ namespace Spectrum.Demo.ViewModels.Editors
         {
             CurrentColor = new ColourViewModel { Color = colours.ElementAt(2).ToSystemColor(255) };
         }
+
+        public override bool CanSave
+        {
+            get { return true; }
+        }
     }
 }

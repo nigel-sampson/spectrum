@@ -21,6 +21,8 @@
             <spectrum:ShiftHueConverter x:Key="ShiftHue"/>
             <spectrum:ShiftSaturationConverter x:Key="ShiftSaturation"/>
 
+            <ExponentialEase x:Key="DefaultEase" EasingMode="EaseInOut" Exponent="6"/>
+
         </ResourceDictionary>
     </cm:CaliburnApplication.Resources>
 </cm:CaliburnApplication>
