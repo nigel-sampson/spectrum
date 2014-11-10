@@ -16,9 +16,6 @@
                                            Foreground="{Binding Color, Converter={StaticResource ForegroundText}}"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button x:Name="View" cm:Message.Attach="View($dataContext)" Style="{StaticResource IconButtonStyle}" PointerMoved="OnHandlePointerMoved"
-                                            Foreground="{Binding Color, Converter={StaticResource ForegroundText}}" Content="&#xE18B;"/>
-
                 <Button x:Name="Edit" cm:Message.Attach="Edit($dataContext)" Style="{StaticResource IconButtonStyle}" PointerMoved="OnHandlePointerMoved"
                                             Foreground="{Binding Color, Converter={StaticResource ForegroundText}}" Content="&#xE104;"/>
 

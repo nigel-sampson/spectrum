@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Spectrum.Demo.Services;
 using Spectrum.Universal;
 
@@ -51,6 +53,11 @@ namespace Spectrum.Demo.ViewModels.Editors
             CurrentColor.Color = new Color.HSL(CurrentHue, CurrentSaturation, CurrentLuminosity)
                 .ToRGB()
                 .ToSystemColor(255);
+        }
+
+        public override void SetColors(IEnumerable<Color.RGB> colours)
+        {
+            CurrentColor = new ColourViewModel { Color = colours.ElementAt(2).ToSystemColor(255) };
         }
     }
 }

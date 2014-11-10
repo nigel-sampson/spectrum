@@ -33,7 +33,9 @@ namespace Spectrum.Demo
 
             container
                 .Singleton<ISchemeStorageService, SchemeStorageService>()
-                .Singleton<IWindowManager, WindowManager>();
+                .Singleton<IWindowManager, WindowManager>()
+                .Singleton<IBitmapService, BitmapService>()
+                .Singleton<ITileService, TileService>();
 
             container
                 .PerRequest<SchemeListViewModel>()
@@ -44,6 +46,10 @@ namespace Spectrum.Demo
 
             statusBar.HideAsync();
 #endif
+
+            var tileService = container.GetInstance<ITileService>();
+
+            tileService.Initialise();
         }
 
         private static void ConfigureSpecialValues()

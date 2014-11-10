@@ -11,7 +11,13 @@ namespace Spectrum.Demo.Services
 {
     public class SchemeStorageService : ISchemeStorageService
     {
+        private readonly ITileService tileService;
         private IList<Scheme> cachedSchemes;
+
+        public SchemeStorageService(ITileService tileService)
+        {
+            this.tileService = tileService;
+        }
 
         public async Task<IReadOnlyCollection<Scheme>> GetSchemesAsync()
         {
@@ -30,13 +36,16 @@ namespace Spectrum.Demo.Services
 
         public async Task SaveSchemeAsync(Scheme scheme)
         {
-            cachedSchemes.Add(scheme);
+            if (!cachedSchemes.Contains(scheme))
+                cachedSchemes.Add(scheme);
 
             var file = await ApplicationData.Current.RoamingFolder.CreateFileAsync(String.Format("{0:N}.scheme", scheme.Id), CreationCollisionOption.ReplaceExisting);
 
             var json = JsonConvert.SerializeObject(scheme);
 
             await FileIO.WriteTextAsync(file, json);
+
+            await tileService.EnqueueSchemeTileAsync(scheme);
         }
 
         private async Task<Scheme> DeserializeFileAsync(StorageFile file)

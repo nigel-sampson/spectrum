@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Spectrum.Demo.Services;
 using Spectrum.Universal;
 using WinColor = Windows.UI.Color;

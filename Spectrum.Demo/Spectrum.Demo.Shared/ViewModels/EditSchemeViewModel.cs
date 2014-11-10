@@ -35,15 +35,19 @@ namespace Spectrum.Demo.ViewModels
         {
             base.OnInitialize();
 
-            if (Id == null)
+            if (Id == Guid.Empty)
                 return;
 
             var schemes = await schemeStorage.GetSchemesAsync();
             
             Scheme = schemes.Single(s => s.Id == Id);
+
+            SelectedType = Types.Single(t => t.Type == Scheme.Type);
+            
+            SelectedType.Editor.SetColors(Scheme.Colours);
         }
 
-        public Guid? Id
+        public Guid Id
         {
             get; set;
         }
@@ -65,7 +69,7 @@ namespace Spectrum.Demo.ViewModels
 
         public async void Save()
         {
-            if (Id == null)
+            if (Id == Guid.Empty)
             {
                 var saveSchemeViewModel = new SaveSchemeViewModel();
 
@@ -94,7 +98,10 @@ namespace Spectrum.Demo.ViewModels
             }
             else
             {
-                
+                Scheme.Colours = SelectedType.Editor.GetColours().ToList();
+                Scheme.Type = SelectedType.Type;
+
+                await schemeStorage.SaveSchemeAsync(Scheme);
             }
 
             navigationService.GoBack();

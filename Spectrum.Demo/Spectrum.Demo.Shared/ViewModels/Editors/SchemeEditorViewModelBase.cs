@@ -37,5 +37,7 @@ namespace Spectrum.Demo.ViewModels.Editors
 
             color.Color = editColourViewModel.Colour.ToSystemColor(255);
         }
+
+        public abstract void SetColors(IEnumerable<Color.RGB> colours);
     }
 }

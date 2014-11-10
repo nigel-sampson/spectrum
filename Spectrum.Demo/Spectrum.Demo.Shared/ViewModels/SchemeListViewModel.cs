@@ -36,7 +36,7 @@ namespace Spectrum.Demo.ViewModels
         {
             navigation.UriFor<EditSchemeViewModel>()
                 .WithParam(v => v.Id, schemeViewModel.Scheme.Id)
-               .Navigate();
+                .Navigate();
         }
 
         public BindableCollection<SchemeViewModel> Schemes

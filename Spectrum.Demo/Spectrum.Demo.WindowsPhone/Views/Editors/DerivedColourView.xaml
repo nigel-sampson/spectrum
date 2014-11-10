@@ -15,12 +15,6 @@
             <TextBlock Text="{Binding Converter={StaticResource ColorHex}}" Style="{StaticResource BodyTextBlockStyle}" 
                                            HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False"
                                            Foreground="{Binding Converter={StaticResource ForegroundText}}"/>
-
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button x:Name="View" micro:Message.Attach="View($dataContext)" Style="{StaticResource IconButtonStyle}" PointerMoved="OnHandlePointerMoved"
-                                            Foreground="{Binding Converter={StaticResource ForegroundText}}" Content="&#xE18B;"/>
-            </StackPanel>
-
         </Grid>
     </Border>
 </UserControl>

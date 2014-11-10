@@ -160,6 +160,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\packages\Newtonsoft.Json.6.0.6\lib\netcore45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="NotificationsExtensions">
+      <HintPath>..\..\packages\NotificationsExtensions.UniversalApps.1.0.3\lib\netcore451\NotificationsExtensions.winmd</HintPath>
+    </Reference>
     <Reference Include="PropertyChanged">
       <HintPath>..\..\packages\PropertyChanged.Fody.1.48.5\Lib\portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40\PropertyChanged.dll</HintPath>
       <Private>False</Private>
@@ -181,6 +184,12 @@
     </Reference>
     <Reference Include="System.Reactive.WindowsRuntime">
       <HintPath>..\..\packages\Rx-WinRT.2.2.5\lib\windows8\System.Reactive.WindowsRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="WinRTXamlToolkit">
+      <HintPath>..\..\packages\WinRTXamlToolkit.1.6.1.3\lib\netcore451\WinRTXamlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="WriteableBitmapEx.WinRT">
+      <HintPath>..\..\packages\WriteableBitmapEx.1.0.13.0\lib\NetCore45\WriteableBitmapEx.WinRT.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup />

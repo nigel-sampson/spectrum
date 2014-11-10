@@ -37,5 +37,10 @@ namespace Spectrum.Demo.ViewModels.Editors
         {
             return Colors.Select(c => c.Color.FromSystemColor());
         }
+
+        public override void SetColors(IEnumerable<Color.RGB> colours)
+        {
+            Colors.AddRange(colours.Select(c => new ColourViewModel { Color = c.ToSystemColor(255) }));
+        }
     }
 }
