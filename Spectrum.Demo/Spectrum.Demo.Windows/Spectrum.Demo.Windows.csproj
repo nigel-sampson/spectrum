@@ -132,11 +132,25 @@
     <None Include="Spectrum.Demo.Windows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Logo.scale-100.png" />
-    <Content Include="Assets\SmallLogo.scale-100.png" />
-    <Content Include="Assets\SplashScreen.scale-100.png" />
-    <Content Include="Assets\StoreLogo.scale-100.png" />
     <Content Include="FodyWeavers.xml" />
+    <Content Include="Resources\Images\Splash.scale-100.png" />
+    <Content Include="Resources\Images\Splash.scale-140.png" />
+    <Content Include="Resources\Images\Splash.scale-180.png" />
+    <Content Include="Resources\Images\Square150.scale-100.png" />
+    <Content Include="Resources\Images\Square150.scale-140.png" />
+    <Content Include="Resources\Images\Square150.scale-180.png" />
+    <Content Include="Resources\Images\Square30.scale-100.png" />
+    <Content Include="Resources\Images\Square30.scale-140.png" />
+    <Content Include="Resources\Images\Square30.scale-180.png" />
+    <Content Include="Resources\Images\Square50.scale-100.png" />
+    <Content Include="Resources\Images\Square50.scale-140.png" />
+    <Content Include="Resources\Images\Square50.scale-180.png" />
+    <Content Include="Resources\Images\Square70.scale-100.png" />
+    <Content Include="Resources\Images\Square70.scale-140.png" />
+    <Content Include="Resources\Images\Square70.scale-180.png" />
+    <Content Include="Resources\Images\Wide.scale-100.png" />
+    <Content Include="Resources\Images\Wide.scale-140.png" />
+    <Content Include="Resources\Images\Wide.scale-180.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Caliburn.Micro">

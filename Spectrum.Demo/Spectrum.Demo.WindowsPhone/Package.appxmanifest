@@ -16,14 +16,14 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Spectrum.Demo.WindowsPhone.App">
-      <m3:VisualElements DisplayName="Spectrum" Square150x150Logo="Resources\Images\Square150.png" Square44x44Logo="Resources\Images\Square44.png" Description="Spectrum.Demo.WindowsPhone" ForegroundText="light" BackgroundColor="#445878">
+      <m3:VisualElements DisplayName="Spectrum" Square150x150Logo="Resources\Images\Square150.png" Square44x44Logo="Resources\Images\Square44.png" Description="Create awesome colour schemes on your device" ForegroundText="light" BackgroundColor="#445878">
         <m3:DefaultTile Wide310x150Logo="Resources\Images\Wide.png" Square71x71Logo="Resources\Images\Square71.png">
           <m3:ShowNameOnTiles>
             <m3:ShowOn Tile="square150x150Logo" />
             <m3:ShowOn Tile="wide310x150Logo" />
           </m3:ShowNameOnTiles>
         </m3:DefaultTile>
-        <m3:SplashScreen Image="Resources\Images\Splash.png" />
+        <m3:SplashScreen Image="Resources\Images\Splash.png" BackgroundColor="#445878" />
       </m3:VisualElements>
     </Application>
   </Applications>

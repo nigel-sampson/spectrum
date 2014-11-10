@@ -50,7 +50,46 @@
             
         </Border>
         
-        <ContentControl cm:View.Model="{Binding SelectedType.Editor}"  Grid.Row="1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+        <ContentControl cm:View.Model="{Binding SelectedType.Editor}" Grid.Row="1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
         
+        <Border x:Name="HelpPanel" Grid.Row="1" Background="#AA000000">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Style="{StaticResource IconButtonStyle}" Content="&#xE10A;" HorizontalAlignment="Right" Click="OnHideHelp"/>
+                <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="24">
+                    <Run Text="Drag your finger over the screen to change the colours of the scheme." />
+                    <LineBreak /> 
+                    <LineBreak />
+                    <Run Text="Horizontal movements change the hue, vertical the luminosity. Use the slider above for saturation." />
+                </TextBlock>
+            </StackPanel>
+            
+        </Border>
+        
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="HelpStates">
+                <VisualStateGroup.Transitions>
+                    <VisualTransition From="HelpCollapsed" To="HelpVisible">
+                        
+                    </VisualTransition>
+                    <VisualTransition From="HelpVisible" To="HelpCollapsed">
+
+                    </VisualTransition>
+                </VisualStateGroup.Transitions>
+                <VisualState x:Name="HelpCollapsed">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HelpPanel" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="HelpVisible">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HelpPanel" Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
     </Grid>
 </Page>
