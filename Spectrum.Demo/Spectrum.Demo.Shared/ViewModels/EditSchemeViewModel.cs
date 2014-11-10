@@ -106,5 +106,30 @@ namespace Spectrum.Demo.ViewModels
 
             navigationService.GoBack();
         }
+
+        public bool CanSave
+        {
+            get { return true; }
+        }
+
+        public void Share()
+        {
+            
+        }
+
+        public bool CanShare
+        {
+            get; set;
+        }
+
+        public void Delete()
+        {
+            
+        }
+
+        public bool CanDelete
+        {
+            get { return Id != Guid.Empty; }
+        }
     }
 }

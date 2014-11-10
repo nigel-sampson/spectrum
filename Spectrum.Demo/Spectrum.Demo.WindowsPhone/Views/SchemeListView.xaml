@@ -7,7 +7,7 @@
     xmlns:cm="using:Caliburn.Micro"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    
+
     <Page.BottomAppBar>
         <CommandBar>
             <AppBarButton x:Name="Create" Icon="Add" Label="create"/>
@@ -19,24 +19,18 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
         <Border Padding="24,18">
             <TextBlock Text="Spectrum" Style="{StaticResource HeaderTextBlockStyle}" FontFamily="{StaticResource LobsterRegularFontFamily}" TextLineBounds="TrimToCapHeight"/>
         </Border>
-        
-        <SemanticZoom Grid.Row="1">
-            <SemanticZoom.ZoomedInView>
-                <ListView x:Name="Schemes" Padding="24" IsItemClickEnabled="True" SelectionMode="None"
+
+        <ListView x:Name="Schemes" Grid.Row="1" Padding="24" IsItemClickEnabled="True"
                           cm:Message.Attach="[Event ItemClick] = [Action View($clickedItem)]">
-                    <ListView.ItemContainerStyle>
-                        <Style TargetType="ListViewItem">
-                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-                            <Setter Property="Margin" Value="0,0,0,12"/>
-                        </Style>
-                    </ListView.ItemContainerStyle>
-                </ListView>
-            </SemanticZoom.ZoomedInView>
-        </SemanticZoom>
-        
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
     </Grid>
 </Page>
