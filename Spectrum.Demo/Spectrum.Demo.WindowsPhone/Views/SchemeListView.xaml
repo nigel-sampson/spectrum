@@ -26,11 +26,12 @@
         
         <SemanticZoom Grid.Row="1">
             <SemanticZoom.ZoomedInView>
-                <ListView x:Name="Schemes" Padding="24" IsItemClickEnabled="True"
+                <ListView x:Name="Schemes" Padding="24" IsItemClickEnabled="True" SelectionMode="None"
                           cm:Message.Attach="[Event ItemClick] = [Action View($clickedItem)]">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            <Setter Property="Margin" Value="0,0,0,12"/>
                         </Style>
                     </ListView.ItemContainerStyle>
                 </ListView>

@@ -120,9 +120,6 @@
     <Compile Include="Views\SchemeListView.xaml.cs">
       <DependentUpon>SchemeListView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\SchemeView.xaml.cs">
-      <DependentUpon>SchemeView.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -214,10 +211,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
     <Page Include="Views\SchemeListView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\SchemeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

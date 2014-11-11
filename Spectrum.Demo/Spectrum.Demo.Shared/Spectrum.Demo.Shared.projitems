@@ -49,12 +49,19 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SchemeListViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SchemeTypeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SchemeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SchemeView.xaml.cs">
+      <DependentUpon>SchemeView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)Resources\Fonts\Lobster-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)Resources\Styles.Shared.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\SchemeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

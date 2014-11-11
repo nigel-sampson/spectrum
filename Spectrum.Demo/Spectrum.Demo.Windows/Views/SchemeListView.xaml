@@ -2,12 +2,34 @@
     x:Class="Spectrum.Demo.Views.SchemeListView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Spectrum.Demo.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:cm="using:Caliburn.Micro"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Spectrum" Style="{ThemeResource HeaderTextBlockStyle}" FontFamily="{StaticResource LobsterRegularFontFamily}"
+                   Margin="120,0,120,40" VerticalAlignment="Bottom"/>
+        
+        <GridView Grid.Row="1" x:Name="Schemes" Padding="116,0,116,46" SelectionMode="None" IsItemClickEnabled="True"
+                  cm:Message.Attach="[Event ItemClick] = [Action View($clickedItem)]">
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid ItemWidth="480" />
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+            <GridView.ItemContainerStyle>
+                <Style TargetType="GridViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="Margin" Value="0,0,80,20"/>
+                </Style>
+            </GridView.ItemContainerStyle>
+        </GridView>
 
     </Grid>
 </Page>

@@ -10,7 +10,7 @@
     d:DesignHeight="200"
     d:DesignWidth="400" d:DataContext="{d:DesignData SchemeViewModel}">
 
-    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,0,12">
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock Text="{Binding Scheme.Name}" Style="{StaticResource BodyTextBlockStyle}" Margin="0,0,0,6" />
         <TextBlock Text="{Binding Scheme.CreatedOn, Converter={StaticResource StringFormat}, ConverterParameter='{}{0:g}'}" Margin="0,0,0,6" Style="{StaticResource BodyTextBlockStyle}" FontSize="12" />
         <ItemsControl ItemsSource="{Binding Scheme.Colours}">
