@@ -159,9 +159,6 @@
     <Reference Include="Caliburn.Micro.Platform">
       <HintPath>..\..\packages\Caliburn.Micro.2.0.1\lib\win81\Caliburn.Micro.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="Humanizer">
-      <HintPath>..\..\packages\Humanizer.1.29.0\lib\portable-win+net40+sl50+wp8+wpa81\Humanizer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Xaml.Interactions">
       <HintPath>..\..\packages\Caliburn.Micro.2.0.1\lib\win81\Microsoft.Xaml.Interactions.dll</HintPath>
     </Reference>
