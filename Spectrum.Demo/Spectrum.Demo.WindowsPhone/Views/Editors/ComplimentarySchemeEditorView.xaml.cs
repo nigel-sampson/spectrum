@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Reactive.Linq;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Input;
-using Spectrum.Demo.ViewModels.Editors;
+using System.Collections.Generic;
+using Windows.UI.Xaml.Controls;
 
 namespace Spectrum.Demo.Views.Editors
 {
@@ -12,41 +9,28 @@ namespace Spectrum.Demo.Views.Editors
         public ComplimentarySchemeEditorView()
         {
             InitializeComponent();
-
-            Loaded += OnLoaded;
         }
 
-        private SingleColorSchemeEditorViewModelBase ViewModel
+        protected override Panel GetInputPanel()
         {
-            get { return (SingleColorSchemeEditorViewModelBase)DataContext; }
+            return InputPanel;
         }
 
-        private void OnLoaded(object sender, RoutedEventArgs e)
+        protected override Slider GetSaturationSlider()
         {
-            Observable.FromEventPattern<PointerRoutedEventArgs>(InputPanel, "PointerMoved")
-                .Where(ev => !ev.EventArgs.Handled)
-                .Select(ev => ev.EventArgs.GetCurrentPoint(InputPanel))
-                .Select(p => new
-                {
-                    Width = p.Position.X / InputPanel.ActualWidth,
-                    Height = p.Position.Y / InputPanel.ActualHeight
-                })
-                .Subscribe(p =>
-                {
-                    ViewModel.CurrentHue = p.Width * 360.0d;
-                    ViewModel.CurrentLuminosity = p.Height;
+            return SaturationSlider;
+        }
 
-                    ViewModel.UpdateColor();
-                });
-
-            Observable.FromEventPattern<RangeBaseValueChangedEventArgs>(SaturationSlider, "ValueChanged")
-                .Select(ev => ev.EventArgs.NewValue)
-                .Subscribe(s =>
-                {
-                    ViewModel.CurrentSaturation = s;
-
-                    ViewModel.UpdateColor();
-                });
+        protected override IEnumerable<IColourView> GetColourViews()
+        {
+            return new IColourView[]
+            {
+                MainColor,
+                Color1,
+                Color2,
+                Color3,
+                Color4
+            };
         }
     }
 }

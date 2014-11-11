@@ -1,18 +1,19 @@
 ﻿using System;
-using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml;
 
 namespace Spectrum.Demo.Views.Editors
 {
-    public sealed partial class DerivedColourView
+    public sealed partial class DerivedColourView : IColourView
     {
         public DerivedColourView()
         {
             InitializeComponent();
         }
 
-        private void OnHandlePointerMoved(object sender, PointerRoutedEventArgs e)
+        public bool DisplayOverlay
         {
-            e.Handled = true;
+            get { return OverlayText.Visibility == Visibility.Visible; }
+            set { OverlayText.Visibility = value ? Visibility.Visible : Visibility.Collapsed; }
         }
     }
 }

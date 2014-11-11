@@ -1,4 +1,4 @@
-﻿<UserControl
+﻿<editors:SingleColorSchemeEditorViewBase
     x:Class="Spectrum.Demo.Views.Editors.AnalogousSchemeEditorView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -23,11 +23,11 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <editors:DerivedColourView Grid.Row="0" DataContext="{Binding CurrentColor.Color, Converter={StaticResource ShiftHue}, ConverterParameter=-30}" />
-            <editors:DerivedColourView Grid.Row="1" DataContext="{Binding CurrentColor.Color, Converter={StaticResource ShiftHue}, ConverterParameter=-15}" />
-            <editors:ColourView Grid.Row="2" DataContext="{Binding CurrentColor}" CanRemove="False"/>
-            <editors:DerivedColourView Grid.Row="3" DataContext="{Binding CurrentColor.Color, Converter={StaticResource ShiftHue}, ConverterParameter=15}"/>
-            <editors:DerivedColourView Grid.Row="4" DataContext="{Binding CurrentColor.Color, Converter={StaticResource ShiftHue}, ConverterParameter=30}"/>
+            <editors:DerivedColourView x:Name="Color1" Grid.Row="0" DataContext="{Binding CurrentColor.Color, Converter={StaticResource ShiftHue}, ConverterParameter=-30}" />
+            <editors:DerivedColourView x:Name="Color2" Grid.Row="1" DataContext="{Binding CurrentColor.Color, Converter={StaticResource ShiftHue}, ConverterParameter=-15}" />
+            <editors:ColourView x:Name="MainColor" Grid.Row="2" DataContext="{Binding CurrentColor}" CanRemove="False"/>
+            <editors:DerivedColourView x:Name="Color3" Grid.Row="3" DataContext="{Binding CurrentColor.Color, Converter={StaticResource ShiftHue}, ConverterParameter=15}"/>
+            <editors:DerivedColourView x:Name="Color4" Grid.Row="4" DataContext="{Binding CurrentColor.Color, Converter={StaticResource ShiftHue}, ConverterParameter=30}"/>
 
         </Grid>
 
@@ -35,4 +35,4 @@
                 Margin="24,12,24,0"/>
 
     </Grid>
-</UserControl>
+</editors:SingleColorSchemeEditorViewBase>

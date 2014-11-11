@@ -36,6 +36,12 @@ namespace Spectrum.Demo.Views.Editors
 
             UpdateColor();
 
+            Observable.FromEventPattern<PointerRoutedEventArgs>(InputPanel, "PointerPressed")
+               .Subscribe(ev => Description.Visibility = Visibility.Collapsed);
+
+            Observable.FromEventPattern<PointerRoutedEventArgs>(InputPanel, "PointerReleased")
+                 .Subscribe(ev => Description.Visibility = Visibility.Visible);
+
             Observable.FromEventPattern<PointerRoutedEventArgs>(InputPanel, "PointerMoved")
                 .Where(ev => !ev.EventArgs.Handled)
                 .Select(ev => ev.EventArgs.GetCurrentPoint(InputPanel))

@@ -112,9 +112,11 @@
     <Compile Include="Views\Editors\EditColourView.xaml.cs">
       <DependentUpon>EditColourView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Editors\IColourView.cs" />
     <Compile Include="Views\Editors\MonochromeSchemeEditorView.xaml.cs">
       <DependentUpon>MonochromeSchemeEditorView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Editors\SingleColorSchemeEditorViewBase.cs" />
     <Compile Include="Views\Editors\TriadSchemeEditorView.xaml.cs">
       <DependentUpon>TriadSchemeEditorView.xaml</DependentUpon>
     </Compile>

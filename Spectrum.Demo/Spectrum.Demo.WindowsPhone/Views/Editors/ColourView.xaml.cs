@@ -5,7 +5,7 @@ using Windows.UI.Xaml.Media;
 
 namespace Spectrum.Demo.Views.Editors
 {
-    public sealed partial class ColourView
+    public sealed partial class ColourView : IColourView
     {
         public ColourView()
         {
@@ -27,6 +27,12 @@ namespace Spectrum.Demo.Views.Editors
         private void OnHandlePointerMoved(object sender, PointerRoutedEventArgs e)
         {
             e.Handled = true;
+        }
+
+        public bool DisplayOverlay
+        {
+            get { return OverlayPanel.Visibility == Visibility.Visible; }
+            set { OverlayPanel.Visibility = value ? Visibility.Visible : Visibility.Collapsed; }
         }
     }
 }

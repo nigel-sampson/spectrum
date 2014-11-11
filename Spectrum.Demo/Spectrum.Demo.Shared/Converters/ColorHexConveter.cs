@@ -1,6 +1,5 @@
 ﻿using System;
 using Windows.UI.Xaml.Data;
-using Spectrum.Universal;
 
 namespace Spectrum.Demo.Converters
 {
@@ -10,9 +9,7 @@ namespace Spectrum.Demo.Converters
         {
             var color = (Windows.UI.Color)value;
 
-            var rgb = color.FromSystemColor();
-
-            return rgb.ToHexString();
+            return String.Format("#{0:X2}{1:X2}{2:X2}", color.R, color.G, color.B);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

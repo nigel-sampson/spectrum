@@ -10,7 +10,7 @@
     d:DesignWidth="400">
 
     <Border Background="{Binding Color, Converter={StaticResource ToBrush}, Mode=OneWay}" Padding="24,12,12,12">
-        <Grid>
+        <Grid x:Name="OverlayPanel">
             <TextBlock Text="{Binding Description}" Style="{StaticResource BodyTextBlockStyle}" 
                                            HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False"
                                            Foreground="{Binding Color, Converter={StaticResource ForegroundText}}"/>
