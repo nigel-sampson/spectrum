@@ -30,7 +30,7 @@
             <TextBlock Grid.Column="1" Text="Spectrum" Style="{ThemeResource HeaderTextBlockStyle}" FontFamily="{StaticResource LobsterRegularFontFamily}"
                        Margin="0,0,0,40" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
 
-            <ComboBox x:Name="Types" Grid.Column="2" VerticalAlignment="Bottom" Margin="40,0,0,40" DisplayMemberPath="Type" Width="200"/>
+            <ComboBox x:Name="Types" Grid.Column="2" VerticalAlignment="Bottom" Margin="40,0,0,30" DisplayMemberPath="Type" Width="200"/>
 
             <StackPanel Orientation="Horizontal" Grid.Column="4" VerticalAlignment="Bottom" Margin="0,0,105,20">
 
@@ -48,11 +48,28 @@
                     </TextBlock>
                 </Button>
 
-                <Button x:Name="Help" Style="{StaticResource ActionButtonStyle}">
+                <Button Style="{StaticResource ActionButtonStyle}">
                     <TextBlock>
-                    <Run Text="help" FontFamily="{StaticResource LobsterRegularFontFamily}"/>
-                    <Run Text="&#xE11B;" FontFamily="{StaticResource SymbolThemeFontFamily}"/>
+                        <Run Text="help" FontFamily="{StaticResource LobsterRegularFontFamily}"/>
+                        <Run Text="&#xE11B;" FontFamily="{StaticResource SymbolThemeFontFamily}"/>
                     </TextBlock>
+                    <Button.Flyout>
+                        <Flyout Placement="Bottom">
+                            <Flyout.FlyoutPresenterStyle>
+                                <Style TargetType="FlyoutPresenter">
+                                    <Setter Property="RequestedTheme" Value="Dark" />
+                                    <Setter Property="Background" Value="#991D1D1D" />
+                                    <Setter Property="BorderThickness" Value="0" />
+                                </Style>
+                            </Flyout.FlyoutPresenterStyle>
+                            <TextBlock Style="{StaticResource BodyTextBlockStyle}" TextWrapping="WrapWholeWords" Width="260">
+                                <Run Text="Drag your finger over the screen to change the colours of the scheme." />
+                                    <LineBreak /> 
+                                    <LineBreak />
+                                <Run Text="Horizontal movements change the hue, vertical the luminosity. Use the slider above for saturation." />
+                            </TextBlock>
+                        </Flyout>
+                    </Button.Flyout>
                 </Button>
 
             </StackPanel>

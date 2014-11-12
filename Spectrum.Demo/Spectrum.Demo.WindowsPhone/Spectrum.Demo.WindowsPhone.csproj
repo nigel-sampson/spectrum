@@ -16,6 +16,9 @@
     <ProjectTypeGuids>{76F1466A-8B6D-4E39-A767-685A06062A39};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SynthesizeLinkMetadata>true</SynthesizeLinkMetadata>
     <NuGetPackageImportStamp>3a8e5ed3</NuGetPackageImportStamp>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxPackageDir>D:\Software\Packages</AppxPackageDir>
+    <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -130,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FodyWeavers.xml" />
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="Resources\Images\Splash.scale-100.png" />
     <Content Include="Resources\Images\Splash.scale-140.png" />
     <Content Include="Resources\Images\Splash.scale-240.png" />

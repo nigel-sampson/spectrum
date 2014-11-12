@@ -1,0 +1,4 @@
+MainPackage=D:\Dev\GitHub\Spectrum\Spectrum.Demo\Spectrum.Demo.WindowsPhone\bin\Release\Spectrum.Demo.WindowsPhone_1.1.0.2_Bundle\Spectrum.Demo.WindowsPhone_1.1.0.2_AnyCPU.appx
+SymbolPackage=D:\Software\Packages\Spectrum.Demo.WindowsPhone_1.1.0.2_Test\Spectrum.Demo.WindowsPhone_1.1.0.2_AnyCPU.appxsym
+ResourcePack=D:\Dev\GitHub\Spectrum\Spectrum.Demo\Spectrum.Demo.WindowsPhone\bin\Release\Spectrum.Demo.WindowsPhone_1.1.0.2_Bundle\Spectrum.Demo.WindowsPhone_1.1.0.2_scale-100.appx
+ResourcePack=D:\Dev\GitHub\Spectrum\Spectrum.Demo\Spectrum.Demo.WindowsPhone\bin\Release\Spectrum.Demo.WindowsPhone_1.1.0.2_Bundle\Spectrum.Demo.WindowsPhone_1.1.0.2_scale-140.appx

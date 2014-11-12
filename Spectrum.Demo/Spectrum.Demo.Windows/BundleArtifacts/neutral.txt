@@ -1,0 +1,4 @@
+MainPackage=D:\Dev\GitHub\Spectrum\Spectrum.Demo\Spectrum.Demo.Windows\bin\Release\Spectrum.Demo.Windows_1.1.0.2_Bundle\Spectrum.Demo.Windows_1.1.0.2_AnyCPU.appx
+SymbolPackage=D:\Software\Packages\Spectrum.Demo.Windows_1.1.0.2_Test\Spectrum.Demo.Windows_1.1.0.2_AnyCPU.appxsym
+ResourcePack=D:\Dev\GitHub\Spectrum\Spectrum.Demo\Spectrum.Demo.Windows\bin\Release\Spectrum.Demo.Windows_1.1.0.2_Bundle\Spectrum.Demo.Windows_1.1.0.2_scale-140.appx
+ResourcePack=D:\Dev\GitHub\Spectrum\Spectrum.Demo\Spectrum.Demo.Windows\bin\Release\Spectrum.Demo.Windows_1.1.0.2_Bundle\Spectrum.Demo.Windows_1.1.0.2_scale-180.appx

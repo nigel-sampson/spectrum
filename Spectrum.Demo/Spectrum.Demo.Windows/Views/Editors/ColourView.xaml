@@ -10,13 +10,13 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Border Background="{Binding Color, Converter={StaticResource ToBrush}, Mode=OneWay}" Padding="24,12,12,12">
+    <Border Background="{Binding Color, Converter={StaticResource ToBrush}, Mode=OneWay}" Padding="24,12,12,12" MinWidth="200">
         <Grid x:Name="OverlayPanel">
-            <TextBlock Text="{Binding Description}" Style="{StaticResource BodyTextBlockStyle}" 
+            <TextBlock Text="{Binding Description}" Style="{StaticResource BodyTextBlockStyle}" TextLineBounds="TrimToCapHeight"
                                            HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False"
                                            Foreground="{Binding Color, Converter={StaticResource ForegroundText}}"/>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
                 <Button x:Name="Edit" cm:Message.Attach="Edit($dataContext)" Style="{StaticResource IconButtonStyle}" PointerMoved="OnHandlePointerMoved"
                                             Foreground="{Binding Color, Converter={StaticResource ForegroundText}}" Content="&#xE104;"/>
 

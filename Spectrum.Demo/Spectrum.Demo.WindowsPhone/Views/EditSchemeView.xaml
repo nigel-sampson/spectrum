@@ -62,8 +62,8 @@
                 <Button Style="{StaticResource IconButtonStyle}" Content="&#xE10A;" HorizontalAlignment="Right" Click="OnHideHelp"/>
                 <TextBlock Style="{StaticResource BodyTextBlockStyle}" Margin="24">
                     <Run Text="Drag your finger over the screen to change the colours of the scheme." />
-                    <LineBreak /> 
-                    <LineBreak />
+                        <LineBreak /> 
+                        <LineBreak />
                     <Run Text="Horizontal movements change the hue, vertical the luminosity. Use the slider above for saturation." />
                 </TextBlock>
             </StackPanel>

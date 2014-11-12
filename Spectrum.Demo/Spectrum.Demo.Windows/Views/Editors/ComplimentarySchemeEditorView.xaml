@@ -32,8 +32,10 @@
 
         </Grid>
 
-        <Slider x:Name="SaturationSlider" Header="Saturation" Grid.Row="0" Minimum="0.0" Maximum="1.0" StepFrequency="0.01" Value="0.5"
-                Margin="24,12,24,0"/>
+        <Grid Grid.Row="0">
+            <Slider x:Name="SaturationSlider" Header="Saturation" Minimum="0.0" Maximum="1.0" StepFrequency="0.01" Value="0.5"
+                Margin="120,0,0,0" HorizontalAlignment="Left" Width="440"/>
+        </Grid>
 
     </Grid>
 </editors:SingleColorSchemeEditorViewBase>

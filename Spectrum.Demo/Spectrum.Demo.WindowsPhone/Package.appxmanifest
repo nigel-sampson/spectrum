@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="88547377-4583-4109-97fa-360d412b94e7" Publisher="CN=Nigel" Version="1.0.0.0" />
-  <mp:PhoneIdentity PhoneProductId="88547377-4583-4109-97fa-360d412b94e7" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="CompiledExperience.SpectrumScheme" Publisher="CN=B13BAC0B-9E6D-4B97-8D77-CF367982F609" Version="1.1.0.2" />
+  <mp:PhoneIdentity PhoneProductId="f5752b60-0aa8-417b-bbf2-f733ab7fb1c2" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>Spectrum.Demo.WindowsPhone</DisplayName>
-    <PublisherDisplayName>Nigel</PublisherDisplayName>
+    <DisplayName>Spectrum Scheme</DisplayName>
+    <PublisherDisplayName>Compiled Experience</PublisherDisplayName>
     <Logo>Resources\Images\Square50.png</Logo>
   </Properties>
   <Prerequisites>
@@ -16,7 +16,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Spectrum.Demo.WindowsPhone.App">
-      <m3:VisualElements DisplayName="Spectrum" Square150x150Logo="Resources\Images\Square150.png" Square44x44Logo="Resources\Images\Square44.png" Description="Create awesome colour schemes on your device" ForegroundText="light" BackgroundColor="#445878">
+      <m3:VisualElements DisplayName="Spectrum Scheme" Square150x150Logo="Resources\Images\Square150.png" Square44x44Logo="Resources\Images\Square44.png" Description="Create awesome colour schemes on your device" ForegroundText="light" BackgroundColor="#445878">
         <m3:DefaultTile Wide310x150Logo="Resources\Images\Wide.png" Square71x71Logo="Resources\Images\Square71.png">
           <m3:ShowNameOnTiles>
             <m3:ShowOn Tile="square150x150Logo" />
