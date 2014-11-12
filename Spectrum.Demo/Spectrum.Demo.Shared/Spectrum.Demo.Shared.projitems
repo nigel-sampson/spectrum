@@ -49,6 +49,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SchemeListViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SchemeTypeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SchemeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Editors\EditColourView.xaml.cs">
+      <DependentUpon>EditColourView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Editors\IColourView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SaveSchemeView.xaml.cs">
+      <DependentUpon>SaveSchemeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\SchemeView.xaml.cs">
       <DependentUpon>SchemeView.xaml</DependentUpon>
     </Compile>
@@ -58,6 +65,14 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)Resources\Styles.Shared.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\Editors\EditColourView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\SaveSchemeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

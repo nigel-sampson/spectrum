@@ -115,8 +115,36 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\DialogAction.cs" />
+    <Compile Include="Controls\DialogContentControl.cs" />
+    <Compile Include="Controls\DialogDismissedEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\WindowManager.cs" />
+    <Compile Include="Views\Editors\AnalogousSchemeEditorView.xaml.cs">
+      <DependentUpon>AnalogousSchemeEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editors\ColourView.xaml.cs">
+      <DependentUpon>ColourView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editors\ComplimentarySchemeEditorView.xaml.cs">
+      <DependentUpon>ComplimentarySchemeEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editors\CustomSchemeEditorView.xaml.cs">
+      <DependentUpon>CustomSchemeEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editors\DerivedColourView.xaml.cs">
+      <DependentUpon>DerivedColourView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editors\MonochromeSchemeEditorView.xaml.cs">
+      <DependentUpon>MonochromeSchemeEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Editors\SingleColorSchemeEditorViewBase.cs" />
+    <Compile Include="Views\Editors\TriadSchemeEditorView.xaml.cs">
+      <DependentUpon>TriadSchemeEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditSchemeView.xaml.cs">
+      <DependentUpon>EditSchemeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SchemeListView.xaml.cs">
       <DependentUpon>SchemeListView.xaml</DependentUpon>
     </Compile>
@@ -207,6 +235,43 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Views\Editors\AnalogousSchemeEditorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Editors\ColourView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Editors\ComplimentarySchemeEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Editors\CustomSchemeEditorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Editors\DerivedColourView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Editors\MonochromeSchemeEditorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Editors\TriadSchemeEditorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EditSchemeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\SchemeListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -224,6 +289,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\..\packages\Fody.1.26.1\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Fody.1.26.1\build\Fody.targets'))" />
   </Target>
+  <Import Project="$(XamlSpyInstallPath)MSBuild\FirstFloor.XamlSpy.WinRT.targets" Condition="'$(XamlSpyInstallPath)' != '' and '$(Configuration)' == 'DEBUG'" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

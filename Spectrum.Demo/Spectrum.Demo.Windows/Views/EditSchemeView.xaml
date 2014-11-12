@@ -5,9 +5,61 @@
     xmlns:local="using:Spectrum.Demo.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:cm="using:Caliburn.Micro"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
 
+            <Button Margin="39,59,39,0" Click="OnGoBack"
+                    Style="{StaticResource NavigationBackButtonNormalStyle}"
+                    VerticalAlignment="Top"/>
+
+            <TextBlock Grid.Column="1" Text="Spectrum" Style="{ThemeResource HeaderTextBlockStyle}" FontFamily="{StaticResource LobsterRegularFontFamily}"
+                       Margin="0,0,0,40" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+
+            <ComboBox x:Name="Types" Grid.Column="2" VerticalAlignment="Bottom" Margin="40,0,0,40" DisplayMemberPath="Type" Width="200"/>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="4" VerticalAlignment="Bottom" Margin="0,0,105,20">
+
+                <Button x:Name="Save" Style="{StaticResource ActionButtonStyle}">
+                    <TextBlock>
+                    <Run Text="save" FontFamily="{StaticResource LobsterRegularFontFamily}"/>
+                    <Run Text="&#xE105;" FontFamily="{StaticResource SymbolThemeFontFamily}"/>
+                    </TextBlock>
+                </Button>
+
+                <Button x:Name="Delete" Style="{StaticResource ActionButtonStyle}">
+                    <TextBlock>
+                    <Run Text="delete" FontFamily="{StaticResource LobsterRegularFontFamily}"/>
+                    <Run Text="&#xE107;" FontFamily="{StaticResource SymbolThemeFontFamily}"/>
+                    </TextBlock>
+                </Button>
+
+                <Button x:Name="Help" Style="{StaticResource ActionButtonStyle}">
+                    <TextBlock>
+                    <Run Text="help" FontFamily="{StaticResource LobsterRegularFontFamily}"/>
+                    <Run Text="&#xE11B;" FontFamily="{StaticResource SymbolThemeFontFamily}"/>
+                    </TextBlock>
+                </Button>
+
+            </StackPanel>
+
+        </Grid>
+
+        <ContentControl cm:View.Model="{Binding SelectedType.Editor}" Grid.Row="1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+       
     </Grid>
 </Page>

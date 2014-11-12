@@ -185,5 +185,13 @@
         <Setter Property="Background" Value="#FF3C3C3C"/>
     </Style>
 
+    <Style x:Key="SchemeNameTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource BodyTextBlockStyle}">
+        
+    </Style>
+
+    <Style x:Key="SchemeDateTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource BodyTextBlockStyle}">
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+
 
 </ResourceDictionary>

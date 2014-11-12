@@ -109,10 +109,6 @@
     <Compile Include="Views\Editors\DerivedColourView.xaml.cs">
       <DependentUpon>DerivedColourView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Editors\EditColourView.xaml.cs">
-      <DependentUpon>EditColourView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Editors\IColourView.cs" />
     <Compile Include="Views\Editors\MonochromeSchemeEditorView.xaml.cs">
       <DependentUpon>MonochromeSchemeEditorView.xaml</DependentUpon>
     </Compile>
@@ -122,9 +118,6 @@
     </Compile>
     <Compile Include="Views\EditSchemeView.xaml.cs">
       <DependentUpon>EditSchemeView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SaveSchemeView.xaml.cs">
-      <DependentUpon>SaveSchemeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SchemeListView.xaml.cs">
       <DependentUpon>SchemeListView.xaml</DependentUpon>
@@ -233,10 +226,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Editors\EditColourView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\Editors\MonochromeSchemeEditorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -246,10 +235,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\EditSchemeView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\SaveSchemeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

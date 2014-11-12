@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
 using Caliburn.Micro;
 
 namespace Spectrum.Demo.Services
@@ -18,10 +16,6 @@ namespace Spectrum.Demo.Services
 
             var contentDialog = CreateDialog(view);
 
-            //var page = GetCurrentPage();
-
-            //ManageHostPage(page, contentDialog, opening: true);
-
             ApplySettings(contentDialog, settings);
 
             ActivateViewModel(rootModel);
@@ -30,22 +24,8 @@ namespace Spectrum.Demo.Services
 
             DeactivateViewModel(rootModel);
 
-            //ManageHostPage(page, contentDialog, opening: false);
-
             return result == ContentDialogResult.Primary;
         }
-
-        //private static void ManageHostPage(Page page, Popup popup, bool opening)
-        //{
-        //    if (page == null)
-        //        return;
-
-        //    if (page.TopAppBar != null)
-        //        page.TopAppBar.IsEnabled = !opening;
-
-        //    if (page.BottomAppBar != null)
-        //        page.BottomAppBar.IsEnabled = !opening;
-        //}
 
         private static void DeactivateViewModel(object rootModel)
         {
@@ -102,16 +82,6 @@ namespace Spectrum.Demo.Services
             }
 
             return false;
-        }
-
-        protected virtual Page GetCurrentPage()
-        {
-            var frame = Window.Current.Content as Frame;
-
-            if (frame == null)
-                return null;
-
-            return frame.Content as Page;
         }
     }
 }

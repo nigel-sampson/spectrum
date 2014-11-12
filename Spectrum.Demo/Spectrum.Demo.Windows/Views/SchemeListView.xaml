@@ -14,7 +14,14 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="Spectrum" Style="{ThemeResource HeaderTextBlockStyle}" FontFamily="{StaticResource LobsterRegularFontFamily}"
-                   Margin="120,0,120,40" VerticalAlignment="Bottom"/>
+                   Margin="120,0,0,40" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+
+        <Button x:Name="Create" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,105,20" Style="{StaticResource ActionButtonStyle}">
+            <TextBlock>
+                <Run Text="create" FontFamily="{StaticResource LobsterRegularFontFamily}"/>
+                <Run Text="&#xE0B6;" FontFamily="{StaticResource SymbolThemeFontFamily}"/>
+            </TextBlock>
+        </Button>
         
         <GridView Grid.Row="1" x:Name="Schemes" Padding="116,0,116,46" SelectionMode="None" IsItemClickEnabled="True"
                   cm:Message.Attach="[Event ItemClick] = [Action View($clickedItem)]">
