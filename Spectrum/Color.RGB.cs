@@ -138,7 +138,7 @@ namespace Spectrum
                 }
                 else if (Math.Abs(percentage[1] - percentage.Max()) < 0.01)
                 {
-                    h = 2 + (percentage[2] - percentage[1]) / delta;
+                    h = 2 + (percentage[2] - percentage[0]) / delta;
                 }
                 else
                 {
